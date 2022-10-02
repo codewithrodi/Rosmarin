@@ -1,0 +1,214 @@
+@keyframes Layout-Wave{
+    from{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes Layout-SmoothScroll{
+    0%{
+        transform: translateY(-142px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+header{
+    background-color: #FFFFFF;
+    z-index: 10;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+header.Sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+    animation: Layout-SmoothScroll 1s forwards;
+}
+
+header #Logo-Box{
+    cursor: pointer;
+}
+
+header #Logo-Box img{
+    width: 50px;
+    height: auto;
+}
+
+header #Navegation-Box{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: auto;
+    align-items: center;
+}
+
+header #Navegation-Box a{
+    font-style: normal;
+    font-weight: 600;
+    font-size: .85rem;
+    text-transform: uppercase;
+}
+
+header #Navegation-Box div{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header #Navegation-Box div:not(:last-child),
+header #Navegation-Box a{
+    margin-right: 1rem;
+}
+
+header #Navegation-Box div > i{
+    font-size: 1.4rem;
+}
+
+header #Navegation-Box div:hover,
+header #Navegation-Box a:hover{
+    opacity: .75;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: auto;
+    height: auto;
+    padding: 1rem;
+}
+
+footer #Site-Box,
+footer #Legal-Box{
+    width: 25%;
+}
+
+footer #Site-Box > :first-child{
+    margin-bottom: .5rem;
+}
+
+footer #Site-Box{
+    text-align: start;
+}
+
+footer #Legal-Box{
+    text-align: end;
+}
+
+footer{
+    border-top: 1px solid #f0f0f0;
+    font-size: .95rem;
+}
+
+footer #Social-Media-Box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+}
+
+footer #Legal-Box #Navegation-Box > a{
+    display: block;
+    margin-bottom: .2rem;
+    font-size: .9rem;
+}
+
+footer #Legal-Box #Copyright-Message{
+    font-weight: 600;
+    font-size: .85rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+footer #Legal-Box #Copyright-Message p{
+    width: 80%;
+}
+
+footer #Social-Media-Box i:not(:last-child){
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 1000px){
+    header #Navegation-Box div > i{
+        font-size: 1.2rem;
+    }
+
+    header #Navegation-Box div > span{
+        font-size: .9rem;
+    }
+}
+
+footer #Social-Media-Box i svg{
+    overflow: hidden;
+    outline: none;
+    width: 22px;
+    height: 22px;
+}
+
+footer #Social-Media-Box i{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1000px){
+    footer{
+        font-size: .85rem !important;
+        flex-direction: column;
+    }
+    
+    footer #Site-Box{
+        order: 1;
+    }
+
+    footer #Legal-Box{
+        order: 3;
+    }
+
+    footer #Social-Media-Box{
+        justify-content: flex-start;
+        order: 2;
+        margin: 1rem 0;
+    }
+    
+    footer #Legal-Box #Copyright-Message{
+        width: 70%;
+    }
+
+    footer #Legal-Box #Copyright-Message p{
+        text-align: start;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    footer #Site-Box,
+    footer #Social-Media-Box,
+    footer #Legal-Box{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    header #Navegation-Box a{
+        font-size: .75rem;
+    }
+}

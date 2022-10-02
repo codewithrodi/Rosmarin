@@ -1,28 +1,47 @@
-import React from 'react';
-import MaintanceImage from '../../../Assets/Images/General/Maintance-Image.jpg';
+import React, { useEffect } from 'react';
+import BoscoImage from '../../../Assets/Images/Home/Bosco-Image.png';
 import { Button } from '@mui/material';
+import ColorsBox from '../../../Components/ColorsBox';
+import { SetTitle } from '../../../Utilities/Runtime';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 const HomePage = () => {
+    const Navigate = useNavigate();
+
+    useEffect(() => {
+        SetTitle('Inicio');
+    }, []);
+
     return (
         <main id='Home-Main'>
-            <section>
-                <figure>
-                    <img src={MaintanceImage} logo='Maintance-Image' />
-                    <figcaption>
-                        <p>El sitio actualmente se encuentra en construcción, inténtalo de nuevo más tarde.</p>
-                    </figcaption>
-                </figure>
-            </section>
-            <section>
-                <Button
-                    onClick={() => window.location.href = 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSe-IQy4xVwFlV-_lqu5lCYlwXm_VYIojnXnOlSRMAya0YkWaw/viewform?usp=send_form'}
-                    variant='outlined'
-                >Formulario CGA</Button>
-                <article className='Help-Text-Container'>
-                    <p>Ingresando a nuestro formulario, puede informarnos sobre sus diferentes inquietudes para remediarlas o aportar ideas para tomar control de las mismas...</p>
+            <section id='Welcome-Box'>
+                <article id='Info-Box'>
+                    <h3>Centro General de Alumnos, Salesianos Talca</h3>
+                    <p>Descubre y mantente informado de las diferentes novedades que se producen en el establecimiento.</p>
+                    <div id='Shortcuts'>
+                        <Button 
+                            onClick={() => Navigate('/agreements')}
+                            variant='contained'>Convenios</Button>
+                        <Button disabled={true} variant='outliend'>Noticias</Button>
+                    </div>
+                </article>
+
+                <article id='Image-Box'>
+                    <img src={BoscoImage} alt='Bosco Img' />
                 </article>
             </section>
+
+            <ColorsBox
+                InfoBox={{
+                    Title: '¡Una nueva visión para el centro de estudiantes!',
+                    Description: 'Para el año 2023 postulan nuevamente integrantes del actual centro de estudiantes, siendo una lista de 23 integrantes con alrededor de dos decenas de propuestas. Una lista que llega para innovar y cambiar lo establecido.'
+                }}
+                ComplementBox={{
+                    Title: '¡Porque serán los representantes del establecimiento!',
+                    Description: 'Tu voto vale más de lo que crees, ahora que se acercan las elecciones para el centro de estudiantes 2023, elige tu lista a conciencia, ¡tu futuro está en juego!'
+                }}
+            />
         </main>
     );
 }

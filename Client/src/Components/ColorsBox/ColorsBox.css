@@ -1,0 +1,50 @@
+.Colors-Box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+}
+
+.Colors-Box .Info-Box,
+.Colors-Box .Complement-Box{
+    width: 50%;
+    min-height: 250px;
+    max-height: 250px;
+    padding: 3rem 1rem;
+}
+
+.Colors-Box .Info-Box{
+    background-color: #000000;
+    color: #FFFFFf;
+}
+
+.Colors-Box .Complement-Box{
+    background-color: #1738D1;
+    color: #FFFFFF;
+}
+
+.Colors-Box .Info-Box > h3,
+.Colors-Box .Complement-Box > h3{
+    font-size: 1.5rem;
+    width: 70%;
+    margin-bottom: 3rem;
+}
+
+.Colors-Box .Complement-Box > h3{
+    width: 100%;
+}
+
+.Colors-Box .Complement-Box{
+    text-align: right;
+}
+
+@media screen and (max-width: 1000px){
+    .Colors-Box .Info-Box,
+    .Colors-Box .Complement-Box{
+        width: 100%;
+        min-height: unset;
+        max-height: unset;
+    }
+}
