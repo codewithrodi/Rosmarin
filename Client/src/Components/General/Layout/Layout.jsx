@@ -155,7 +155,7 @@ const Layout = () => {
                         <Link to='/terms-and-privacy'>Términos de uso y privacidad</Link>
                         <a
                             className='Touchable'
-                            href={References.GoogleFormsLink}>Reportar inquietudes y/o ideas</a>
+                            href={References.GForms}>Reportar inquietudes y/o ideas</a>
                     </div>
                     <div id='Copyright-Message'>
                         <p>Centro General de Alumnos © 2022</p>
