@@ -1,0 +1,12 @@
+{
+    "Authentication": {
+        "Username": {
+            "MaxLength": 16,
+            "MinLength": 4
+        },
+        "Password": {
+            "MaxLength": 32,
+            "MinLength": 6
+        }
+    }   
+}
