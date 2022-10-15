@@ -1,6 +1,23 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 import React, { useEffect } from 'react';
 import HeadShake from 'react-reveal/HeadShake';
-import ColorsBox from '../../../Components/ColorsBox';
+import ColorsBox from '../../../Components/General/ColorsBox';
 import { SetTitle } from '../../../Utilities/Runtime';
 import './Privacy.css';
 

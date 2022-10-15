@@ -1,3 +1,20 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Application from './Application';
@@ -11,6 +28,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { MergeObjectValues } from './Utilities/Algorithms';
 import { CoreProvider } from './Services/Core/Context';
 import { AuthenticationProvider } from './Services/Authentication/Context';
+import { MetricProvider } from './Services/Metric/Context';
 import './Utilities/Patches';
 import './Assets/StyleSheets/General.css';
 import './Assets/StyleSheets/Form.css';
@@ -34,8 +52,9 @@ ReactDOM.createRoot(document.getElementById('Document-Root'))
       <MultiProvider
         providers={[
           <BrowserRouter />,
-          <AuthenticationProvider />,
           <CoreProvider />,
+          <MetricProvider />,
+          <AuthenticationProvider />,
           <MaterialUI.ThemeProvider theme={MaterialTheme} />,
           <EvergreenUI.ThemeProvider value={EvergreenTheme} />,
           <ScrollToTop />

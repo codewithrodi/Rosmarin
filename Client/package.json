@@ -1,11 +1,11 @@
 {
-  "name": "Client",
+  "name": "client",
   "author": {
     "name": "Rodolfo Sebastian Herrera Hernandez @codewithrod",
     "email": "contact@codewithrodi.com",
     "url": "https://codewithrodi.com"
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "dependencies": {
@@ -17,10 +17,12 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "axios-retry": "^3.3.1",
+    "chart.js": "^3.9.1",
     "evergreen-ui": "^6.10.4",
     "framer-motion": "^7.5.1",
     "hamburger-react": "^2.5.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-pendulum": "^0.0.1",

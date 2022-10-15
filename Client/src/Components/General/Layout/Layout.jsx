@@ -1,13 +1,34 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import SDBLogo from '../../../Assets/Images/General/SDB-Logo.png';
 import Instagram from 'react-useanimations/lib/instagram';
 import Facebook from 'react-useanimations/lib/facebook';
 import UseAnimations from 'react-useanimations';
 import Hamburger from 'hamburger-react'
+import UseWindowSize from '../../../Hooks/WindowSize';
 import { AuthenticationContext } from '../../../Services/Authentication/Context';
 import { References } from '../../../Infrastructure';
 import { AiOutlineShop } from 'react-icons/ai';
 import { RiLockPasswordLine } from 'react-icons/ri';
+import { GiBookshelf } from 'react-icons/gi';
+import { FiGithub } from 'react-icons/fi';
+import { MdOutlineDashboard } from 'react-icons/md';
 import { BiWorld, BiLogOut } from 'react-icons/bi';
 import { VscSignIn } from 'react-icons/vsc';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
@@ -15,7 +36,8 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import './Layout.css';
 
 const Layout = () => {
-    const { IsAuthenticated, Logout } = useContext(AuthenticationContext);
+    const [Width] = UseWindowSize();
+    const { IsAuthenticated, GetUser, Logout } = useContext(AuthenticationContext);
     const HeaderReference = useRef(null);
     const FooterReference = useRef(null);
     const Navigate = useNavigate();
@@ -38,7 +60,11 @@ const Layout = () => {
         // TODO: it did not fit with the content that was on 
         // TODO: the page, doing this, I solved it...
         const Main = document.querySelector('#Document-Root main');
-        Main.appendChild(FooterReference.current);
+        const FormControl = document.querySelector('#Document-Root #Form-Control-Main > form');
+        ((FormControl && Width <= 1000) && (
+            FooterReference.current.style.marginTop = (
+                (FormControl.scrollHeight - FormControl.clientHeight) + 16) + 'px'));
+        Main?.appendChild(FooterReference.current);
         document.addEventListener('click', (Event) => {
             const HamburgerMenuBox = document.querySelector('#Hamburger-Menu-Box');
             const EvergreenMenuBox = document.querySelector('#Evergreen-Menu-Box');
@@ -52,7 +78,7 @@ const Layout = () => {
             SetSticky({});
             SetIsMenuEnabled(false);
         };
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
   
     return (
         <div style={{ all: 'inherit', marginTop: GetSticky.Offset }}>
@@ -82,6 +108,20 @@ const Layout = () => {
                                             >
                                                 <span>Convenios</span>
                                             </EverMenu.Item>
+                                            <EverMenu.Item
+                                                disabled={true}
+                                                icon={<GiBookshelf />}
+                                            >
+                                                <span>Biblioteca</span>
+                                            </EverMenu.Item>
+                                            {IsAuthenticated && GetUser.Role === 'admin' && (
+                                                <EverMenu.Item
+                                                    icon={<MdOutlineDashboard />}
+                                                    onClick={() => Navigate('/admin/dashboard/')}
+                                                >
+                                                    <span>Dashboard</span>
+                                                </EverMenu.Item>
+                                            )}
                                         </EverMenu.Group>
                                         <EverMenu.Divider />
                                         <EverMenu.Group>
@@ -109,6 +149,15 @@ const Layout = () => {
                                                 icon={<RiLockPasswordLine />}
                                             >
                                                 <span>Contraseña olvidada</span>
+                                            </EverMenu.Item>
+                                        </EverMenu.Group>
+                                        <EverMenu.Divider />
+                                        <EverMenu.Group>
+                                            <EverMenu.Item
+                                                onClick={() => window.location.href = References.Github}
+                                                icon={<FiGithub />}
+                                            >
+                                                <span>Código fuente</span>
                                             </EverMenu.Item>
                                         </EverMenu.Group>
                                     </EverMenu>                                    

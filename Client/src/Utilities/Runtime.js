@@ -1,3 +1,20 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 import NodeValidator from 'validator';
 import Axios from './Axios';
 import { GetCurrentUserToken } from '../Services/Authentication/Service';
@@ -23,7 +40,28 @@ const ServerErrors = {
     AUTH_INVALID_TOKEN: 'El token recibido no es válido, comprueba que es correcto.',
     AUTH_CURRENT_PASSWORD_WRONG: 'La contraseña actual no es válida, verifique que sea correcta para completar con éxito su solicitud, intente nuevamente.',
     AUTH_EXPIRED_TOKEN: 'Se ha detectado que el token que recibió el servidor no es válido, el token ha caducado, solicite uno nuevo para completar esta solicitud.',
-    AUTH_NEW_PASSWORD_AND_OLD_PASSWORD_ARE_SAME: 'La contraseña actual y la nueva contraseña son iguales, debe ingresar contraseñas diferentes para realizar el restablecimiento y/o cambio de contraseña.'
+    AUTH_NEW_PASSWORD_AND_OLD_PASSWORD_ARE_SAME: 'La contraseña actual y la nueva contraseña son iguales, debe ingresar contraseñas diferentes para realizar el restablecimiento y/o cambio de contraseña.',
+    CONTACT_NOT_ENOUGH_PARAMETERS: 'Comprueba que has llenado todos los datos del formulario y vuelve a intentarlo.',
+    CONTACT_GRADE_OR_DEPARTMENT_ARE_INVALID: 'El grado o el departamento son invalidos.',
+    CONTACT_SEND_MAIL_ERROR: 'Se produjo un error inesperado mientras el servidor intento procesar su solicitud de contacto, inténtelo de nuevo más tarde.',
+    METRIC_IPV4_MAXLENGTH: 'La dirección IPv4 excede los maximos caracteres permitidos.',
+    METRIC_IPV4_NOT_PROVIDED: 'No se recibe ninguna dirección IPv4, abortando la operación', 
+    METRIC_LANGUAGE_MAXLENGTH: 'El sistema idioma excede los maximos caracteres permitidos.',
+    METRIC_LANGUAGE_MINLENGTH: 'El lenguaje no cumple con los minimos caracteres establecidos.',
+    METRIC_LANGUAGE_INVALID: 'El lenguaje no es valido.',
+    METRIC_LANGUAGE_NOT_PROVIDED: 'No se recibe ningún idioma, abortando la operación.',
+    METRIC_OPERATING_SYSTEM_MAXLENGTH: 'El sistema operativo excede los maximos caracteres permitidos.',
+    METRIC_OPERATING_SYSTEM_NOT_PROVIDED: 'No se recibe ningún sistema operativo, abortando la operación',
+    METRIC_BROWSER_MAXLENGTH: 'El nombre del navegador excede los maximos caracteres permitidos.',
+    METRIC_BROWSER_NOT_PROVIDED: 'No se recibe ningún navegador, abortando la operación.',
+    METRIC_COUNTRY_MAXLENGTH: 'El país excede los maximos caracteres permitidos.',
+    METRIC_REGION_MAXLENGTH: 'La región excede los maximos caracteres permitidos.',
+    METRIC_CITY_MAXLENGTH: 'La ciudad excede los maximos caracteres permitidos.',
+    METRIC_TIMEZONE_MAXLENGTH: 'El tiempo de zona excede los maximos caracteres permitidos.',
+    METRIC_LATITUDE_MAXLENGTH: 'La latitud excede los maximos caracteres permitidos.',
+    METRIC_LONGITUDE_MAXLENGTH: 'La longitud excede los maximos caracteres permitidos.',
+    METRIC_REPORT_NOT_ENOUGH_PARAMETERS: 'No se recibieron los parámetros necesarios, abortando la operación.',
+    METRIC_REPORT_LAT_LONG_INVALID: 'La longitud o latitud son incorrectas, inténtelo de nuevo más tarde.',
 };
 
 export const FormatString = ({ UnformattedString, Values }) => {
@@ -189,19 +227,37 @@ export const CheckFormErrors = ({ States, Validator = undefined }) => {
                     Min: StateValidation.Min
                 }
             });
-        else if(StateValidation.Enum && !StateValidation.Enum.includes(State.Getter.toLowerCase()))
+        else if(Array.isArray(StateValidation.Enum) && !StateValidation.Enum.includes(State.Getter.toLowerCase()))
             Buffer[State.Identifier] = FormatString({
                 UnformattedString: State.OnEnumError,
                 Values: {
                     Enums: StateValidation.Enum.join(' ')
                 }
             });
-        else if(State.CompareWith !== State.Getter)
+        else if(typeof StateValidation.Enum === 'string'){
+            const [EnumObject, Index] = StateValidation.Enum.split(';');
+            const Enums = (Object[(parseInt(Index) === 0) 
+                    ? ('keys') : ('values')](Settings[EnumObject]));
+            if(!Enums.includes(State.Getter))
+                Buffer[State.Identifier] = FormatString({
+                    UnformattedString: State.OnEnumError,
+                    Values: {
+                        Enums: Enums.join(' ')
+                    }
+                });
+        }else if(State.CompareWith !== State.Getter)
             Buffer[State.Identifier] = State.OnCompareError;
         else
             Buffer[State.Identifier] = undefined;
     });
     return Buffer;
+};
+
+export const GetClientLanguage = () => {
+    let Locale = navigator.language || navigator.userLanguage;
+    if(Locale.includes('-'))
+        Locale = Locale.split('-')[0];
+    return Locale.toLowerCase();
 };
 
 export const SetTitle = (Title) => 

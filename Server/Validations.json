@@ -8,5 +8,64 @@
             "MaxLength": 32,
             "MinLength": 6
         }
-    }   
+    },
+    "StandardIdentity": {
+        "Name": {
+            "MaxLength": 256,
+            "MinLength": 6,
+            "Splitted": {
+                "MinLength": 2
+            }
+        },
+        "Title": {
+            "MaxLength": 128,
+            "MinLength": 4
+        },
+        "Message": {
+            "MaxLength": 32000,
+            "MinLength": 16,
+            "Splitted": {
+                "MinLength": 4
+            }
+        },
+        "Grade": {
+            "Enum": "Grades;0"
+        },
+        "Department": {
+            "Enum": "Departments;0"
+        }
+    },
+    "Metrics": {
+        "IPv4": {
+            "MaxLength": 39
+        },
+        "Language": {
+            "MaxLength": 2,
+            "MinLength": 2
+        },
+        "OperatingSystem": {
+            "MaxLength": 16
+        },
+        "Browser": {
+            "MaxLength": 16
+        },
+        "Region": {
+            "MaxLength": 16
+        },
+        "City": {
+            "MaxLength": 16
+        },
+        "Country": {
+            "MaxLength": 2
+        },
+        "Timezone": {
+            "MaxLength": 32
+        },
+        "Latitude": {
+            "MaxLength": 10
+        },
+        "Longitude": {
+            "MaxLength": 11
+        }
+    }
 }

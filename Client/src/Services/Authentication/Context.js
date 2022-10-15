@@ -1,17 +1,37 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
+import React, { createContext, useState, useEffect, useContext } from 'react';
 import { MakeServerRequest } from '../../Utilities/Runtime';
+import { CoreContext } from '../Core/Context';
 import * as Service from './Service';
 
 export const AuthenticationContext = createContext();
 
 export const AuthenticationProvider = ({ children }) => {
+    const { 
+        GetError,
+        SetError,
+        SetMessage,
+        GetMessage
+     } = useContext(CoreContext);
     const [GetUser, SetUser] = useState(null);
-    const [GetMessage, SetMessage] = useState(null);
     const [GetIsLoading, SetIsLoading] = useState(true);
-    const [GetError, SetError] = useState(null);
     const Setters = { OnErrorSetter: SetError };
-    const Location = useLocation();
     const RequiredFields = ['Username'];
     const SortFields = [
         ['Username', 'Username'],
@@ -127,7 +147,7 @@ export const AuthenticationProvider = ({ children }) => {
         }
     });
 
-    const TryLoggedInWithCachedSessionToken = () => {
+    useEffect(() => {
         const CachedSessionToken = Service.GetCurrentUserToken();
         if(!CachedSessionToken)
             return SetIsLoading(false);
@@ -137,21 +157,11 @@ export const AuthenticationProvider = ({ children }) => {
         })
         .then((Response) => SetUser(Response.Data))
         .finally(() => SetIsLoading(false));
-    };
-
-    useEffect(() => {
-        SetError('');
-        SetMessage('');
-    }, [Location]);
-
-    useEffect(() => {
         return () => {
             SetUser({});
-            SetError('');
             SetIsLoading(false);
-            SetMessage('');
         };
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <AuthenticationContext.Provider
@@ -165,7 +175,6 @@ export const AuthenticationProvider = ({ children }) => {
                 GetError,
                 SetIsLoading,
                 UpdateMyPassword,
-                TryLoggedInWithCachedSessionToken,
                 DeleteUser,
                 RequiredFields,
                 SortFields,

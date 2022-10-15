@@ -1,3 +1,20 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 #Form-Control-Main{
     display: flex;
     flex-wrap: wrap;
@@ -137,6 +154,14 @@
 @media (max-width: 1000px){
     #Form-Control-Main > section > article:last-child{
         display: none;
+    }
+
+    #Form-Control-Main form > :last-child > :nth-child(odd){
+        animation: Right-Slide .5s;
+    }
+
+    #Form-Control-Main form > :last-child > :nth-child(even){
+        animation: Left-Slide .5s;
     }
 }
 

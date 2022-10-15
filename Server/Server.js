@@ -1,3 +1,20 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 const Express = require('express');
 const Helmet = require('helmet');
 const MongoSanitize = require('express-mongo-sanitize');
@@ -15,6 +32,7 @@ console.clear();
 DotEnv.config({ path: './Settings.env' });
 
 global.Validations = Object.assign({}, JSON.parse(FileSystem.readFileSync('./Validations.json')));
+global.Configuration = Object.assign({}, JSON.parse(FileSystem.readFileSync('./Configuration.json')));
 
 process.on('uncaughtException', (ServerError) => {
     console.error(ServerError.name, ServerError.message);
@@ -35,6 +53,8 @@ Application.use(Helmet());
 Application.use(MongoSanitize());
 Application.use(Express.json({ limit: process.env.BODY_MAX_SIZE || '10kb' }));
 Application.use('/api/v1/auth', require('./Routes/Authentication'));
+Application.use('/api/v1', require('./Routes/Barebones'));
+Application.use('/api/v1/metric', require('./Routes/Metric'));
 Application.all('*', (Request, Response, Next) => 
     Response.status(404).json({
         Message: `Can't find ${Request.originalUrl} on the server.`

@@ -1,0 +1,56 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+ 
+#Ordered-Metrics-View-Container > :first-child{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Ordered-Metrics-View-Container > :first-child > :first-child{
+    border-radius: .25rem;
+}
+
+#Ordered-Metrics-View-Container{
+    margin: 1.5rem 0;
+    width: 100%;
+}
+
+#Ordered-Metrics-View-Button-Container{
+    width: 100%;
+    text-align: center;
+}
+
+#Ordered-Metrics-View-Container > :last-child{
+    padding: 0 1rem;    
+}
+
+@media (max-width: 1000px){
+    #Ordered-Metrics-View-Container > :first-child{
+        display: unset;
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    #Ordered-Metrics-View-Container > :first-child > :first-child{
+        width: 100% !important;
+        margin-bottom: 1rem;
+        height: auto;
+    }
+}

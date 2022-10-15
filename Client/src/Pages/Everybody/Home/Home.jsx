@@ -1,7 +1,24 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
 import React, { useEffect } from 'react';
 import BoscoImage from '../../../Assets/Images/Home/Bosco-Image.png';
 import { Button } from '@mui/material';
-import ColorsBox from '../../../Components/ColorsBox';
+import ColorsBox from '../../../Components/General/ColorsBox';
 import { SetTitle } from '../../../Utilities/Runtime';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
@@ -23,7 +40,9 @@ const HomePage = () => {
                         <Button 
                             onClick={() => Navigate('/agreements')}
                             variant='contained'>Convenios</Button>
-                        <Button disabled={true} variant='outliend'>Noticias</Button>
+                        <Button
+                            onClick={() => Navigate('/contact')}
+                            variant='text'>Contacto</Button>
                     </div>
                 </article>
 
