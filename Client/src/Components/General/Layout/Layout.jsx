@@ -25,7 +25,7 @@ import UseWindowSize from '../../../Hooks/WindowSize';
 import { AuthenticationContext } from '../../../Services/Authentication/Context';
 import { References } from '../../../Infrastructure';
 import { AiOutlineShop } from 'react-icons/ai';
-import { RiLockPasswordLine } from 'react-icons/ri';
+import { RiLockPasswordLine, RiUserVoiceLine } from 'react-icons/ri';
 import { GiBookshelf } from 'react-icons/gi';
 import { FiGithub } from 'react-icons/fi';
 import { MdOutlineDashboard } from 'react-icons/md';
@@ -107,6 +107,12 @@ const Layout = () => {
                                                 icon={<AiOutlineShop />}
                                             >
                                                 <span>Convenios</span>
+                                            </EverMenu.Item>
+                                            <EverMenu.Item
+                                                onClick={() => Navigate('/contact')}
+                                                icon={<RiUserVoiceLine />}
+                                            >
+                                                    <span>Contacto</span>
                                             </EverMenu.Item>
                                             <EverMenu.Item
                                                 disabled={true}
