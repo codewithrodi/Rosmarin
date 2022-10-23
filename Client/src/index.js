@@ -19,6 +19,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Application from './Application';
 import ReportWebVitals from './ReportWebVitals';
+import SuccessAlert from './Components/General/SuccessAlert';
 import ScrollToTop from './Components/General/ScrollToTop';
 import * as EvergreenUI from 'evergreen-ui';
 import * as MaterialUI from '@mui/material/styles';
@@ -29,6 +30,7 @@ import { MergeObjectValues } from './Utilities/Algorithms';
 import { CoreProvider } from './Services/Core/Context';
 import { AuthenticationProvider } from './Services/Authentication/Context';
 import { MetricProvider } from './Services/Metric/Context';
+import { Provider as AlertProvider } from 'react-alert'
 import './Utilities/Patches';
 import './Assets/StyleSheets/General.css';
 import './Assets/StyleSheets/Form.css';
@@ -37,6 +39,9 @@ const MaterialTheme = MaterialUI.createTheme({
     palette: {
         primary: {
             main: '#000000'
+        },
+        secondary: {
+            main: '#FFFFFF'
         }
     }
 });
@@ -47,10 +52,15 @@ const EvergreenTheme = MergeObjectValues(EvergreenUI.defaultTheme, {
   } 
 });
 
+const AlertTemplate = ({ options }) => (
+  (options.type === 'success') && (<SuccessAlert />)
+);
+
 ReactDOM.createRoot(document.getElementById('Document-Root'))
   .render(
       <MultiProvider
         providers={[
+          <AlertProvider template={AlertTemplate} />,
           <BrowserRouter />,
           <CoreProvider />,
           <MetricProvider />,

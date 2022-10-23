@@ -58,6 +58,13 @@ body{
     -moz-osx-font-smoothing: grayscale;
 }
 
+i{
+    font-style: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 main{
     padding: 1rem;
 }
@@ -68,6 +75,17 @@ a{
 
 a:hover{
     opacity: .8;
+}
+
+.Cite-Box{
+    padding: .5rem;
+    font-size: .8rem;
+}
+
+cite{
+    border-left: 2px solid #000000;
+    display: block;
+    padding: .5rem;
 }
 
 #Document-Root{
@@ -95,6 +113,36 @@ a:hover{
     background-color: #b3b2b2;
 }
 
+.react-pdf__Page__textContent{
+    display: none;
+}
+
+.react-pdf__Document{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.react-pdf__Page{
+    max-width: calc(100% - 2em);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    margin: 1em;
+}
+
+.react-pdf__Page canvas{
+    max-width: 100%;
+    height: auto !important;
+}
+  
+.react-pdf__message{
+    padding: 20px;
+    color: white;
+}
+
+.ub-box-szg_border-box{
+    z-index: 30 !important;
+}
+
 .Help-Text-Container{
     color: rgba(0, 0, 0, 0.6);
     font-family: "Roboto","Helvetica","Arial",sans-serif;
@@ -111,7 +159,7 @@ a:hover{
 }
 
 .Desktop-Box{
-    display: inherit;
+    display: initial;
 }
 
 .Mobile-Box{
@@ -128,6 +176,6 @@ a:hover{
     }
 
     .Mobile-Box{
-        display: inherit !important;
+        display: initial !important;
     }
 }

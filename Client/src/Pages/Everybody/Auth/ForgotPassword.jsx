@@ -87,7 +87,7 @@ const ForgotPasswordPage = () => {
             <section>
                 <article>
                     <h1>La forma de recuperar tu contraseña olvidada...</h1>
-                    <p>¿Has olvidado tu contraseña? No tienes absolutamente nada de qué preocuparte, es algo que nos puede pasar a todos de vez en cuando, y nosotros tenemos la solución para remediar tu situación.</p>
+                    <p>¿Has olvidado tu contraseña? No tienes absolutamente nada de que preocuparte, es algo que nos puede pasar a todos de vez en cuando, y nosotros tenemos la solución para remediar tu situación.</p>
                 </article>
 
                 <article>

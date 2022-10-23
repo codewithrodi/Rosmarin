@@ -1,0 +1,56 @@
+#Success-Alert{
+    --Size: 50px;
+    bottom: 1rem;
+    right: 1rem;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--Size);
+    height: var(--Size);
+    border-radius: 100%;
+    background: #77f6d5;
+    z-index: 1000;
+    animation: 1s Success-Alert-Animation linear forwards;
+}
+  
+#Success-Alert > * {
+    opacity: 0;
+    animation: 1s Success-Alert-Tick linear forwards;
+}
+  
+@keyframes Success-Alert-Animation{
+    20%{
+        transform: scale(0.4);
+        box-shadow: 0 0 0 0 rgba(119, 246, 213, 0.2);
+    }
+
+    40%{
+        transform: scale(1.2);
+    }
+
+    50%{
+        transform: scale(1);
+        box-shadow: 0 0 0 40px rgba(119, 246, 213, 0.2);
+    }
+
+    70%{
+        border-radius: 100%;
+        box-shadow: 0 0 0 90px rgba(119, 246, 213, 0);
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes Success-Alert-Tick{
+    0%, 25%{
+        opacity: 0;
+    }
+
+    50%, 100%{
+        opacity: 1;
+    }
+}

@@ -95,7 +95,7 @@ const SignInPage = () => {
         <main id='Form-Control-Main'>
             <section>
                 <article>
-                    <h1>Iniciar sesion en la plataforma</h1>
+                    <h1>Iniciar sesión en la plataforma</h1>
                     <p>Ingresa con tu usuario y contraseña para descubrir las diferentes herramientas de administración con las que cuenta este servicio.</p>
                 </article>
 

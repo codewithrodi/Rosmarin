@@ -4,7 +4,7 @@ Web platform (www.cgacest.com) custom developed to provide new solutions with an
 Fully built in JavaScript, using the MERN development stack (MongoDB, Express ReactJS and NodeJS), with high-quality production, including sending Emails in actions that the user can perform within the platform.
 The plan for the development of this software is to make the stay of the students of the establishment much better, by developing this platform, we are doing something that very probably few student centers have done, and if they have, they use WordPress or some other platform. or tool that facilitates the development of the same; We are here to innovate and revolutionize, creating new solutions and adding value to the presence of this institution in our city, also creating the difference between other student centers that have other establishments with those who have passed after generations through the institution. to which this software is intended.
 This is because we like art, we like things well done, we are fascinated by making the ordinary extraordinary, we plan that this system be kept constantly updated while my stay as president in the student center is in force, in a current BETA phase, this web platform is currently under development, so bugs and errors at the experience or system level may arise.
-[![1.png](https://i.postimg.cc/FzHjsSL2/1.png)](https://postimg.cc/8JxFZjwH)
+![Rosmarin](https://github.com/codewithrodi/rosmarin/blob/main/Images/Rosmarin-Cover.png?raw=true)
 ### Features
 - Highly secure
 - Firewall for XSS attacks

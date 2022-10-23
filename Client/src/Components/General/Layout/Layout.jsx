@@ -26,7 +26,6 @@ import { AuthenticationContext } from '../../../Services/Authentication/Context'
 import { References } from '../../../Infrastructure';
 import { AiOutlineShop } from 'react-icons/ai';
 import { RiLockPasswordLine, RiUserVoiceLine } from 'react-icons/ri';
-import { GiBookshelf } from 'react-icons/gi';
 import { FiGithub } from 'react-icons/fi';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { BiWorld, BiLogOut } from 'react-icons/bi';
@@ -113,12 +112,6 @@ const Layout = () => {
                                                 icon={<RiUserVoiceLine />}
                                             >
                                                     <span>Contacto</span>
-                                            </EverMenu.Item>
-                                            <EverMenu.Item
-                                                disabled={true}
-                                                icon={<GiBookshelf />}
-                                            >
-                                                <span>Biblioteca</span>
                                             </EverMenu.Item>
                                             {IsAuthenticated && GetUser.Role === 'admin' && (
                                                 <EverMenu.Item

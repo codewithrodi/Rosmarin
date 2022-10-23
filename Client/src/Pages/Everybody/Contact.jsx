@@ -198,7 +198,7 @@ const ContactPage = () => {
                             onChange={(Event) => SetEmail(Event.target.value)}
                             value={GetEmail}
                             error={GetErrors.Email}
-                            placeholder='Dirección de correo electronico'
+                            placeholder='Dirección de correo electrónico'
                             fullWidth={true}
                             required={true}
                             helperText={(GetErrors.Email) ? GetErrors.Email : 'Su dirección de correo electrónico se utilizará para comunicarnos con usted si su solicitud y/o inquietud lo requiere.'}
@@ -256,7 +256,7 @@ const ContactPage = () => {
                             name='Title'
                             onChange={(Event) => SetTitle(Event.target.value)}
                             value={GetTitle}
-                            placeholder='Titulo o sujeto de tu petición'
+                            placeholder='Título o sujeto de tu petición'
                             fullWidth={true}
                             required={true}
                             error={GetErrors.Title}
@@ -281,7 +281,7 @@ const ContactPage = () => {
                             name='Message'
                             onChange={(Event) => SetMessage(Event.target.value)}
                             value={GetMessage}
-                            placeholder='Describenos tu petición o inquietud'
+                            placeholder='Descríbenos tu petición o inquietud'
                             fullWidth={true}
                             required={true}
                             error={GetErrors.Message}

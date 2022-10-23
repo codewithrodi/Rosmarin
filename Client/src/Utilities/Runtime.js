@@ -17,6 +17,7 @@
 
 import NodeValidator from 'validator';
 import Axios from './Axios';
+import JSFileDownload from 'js-file-download';
 import { GetCurrentUserToken } from '../Services/Authentication/Service';
 import { Validations, Settings } from '../Infrastructure';
 
@@ -179,6 +180,16 @@ export const GenericRequestToBackend = ({
 };
 
 
+export const EventFire = (Element, EType) => {
+    if(Element.fireEvent) {
+        Element.fireEvent('on' + EType);
+    }else{
+        const Event = document.createEvent('Events');
+        Event.initEvent(EType, true, false);
+        Element.dispatchEvent(Event);
+    }
+};
+
 export const CheckFormErrors = ({ States, Validator = undefined }) => {
     const Validation = Validations[Validator] || {};
     if(!Validation)
@@ -251,6 +262,44 @@ export const CheckFormErrors = ({ States, Validator = undefined }) => {
             Buffer[State.Identifier] = undefined;
     });
     return Buffer;
+};
+
+export const DownloadExternalFile = (File, Name) => {
+    Axios.get(File, {
+        responseType: 'blob'
+    })
+    .then((Response) => JSFileDownload(Response.data, Name));
+};
+
+export const CopyToClipboard = (Content) => {
+    const TextArea = document.createElement('textarea');
+    const IsiOS = navigator.userAgent.match(/ipad|iphone/i);
+
+    TextArea.value = Content;
+    TextArea.style.position = 'absolute';
+    TextArea.style.left = '-9999px';
+    TextArea.setAttribute('readonly', '');
+
+    document.body.appendChild(TextArea);
+
+    if(IsiOS){
+        const Range = document.createRange();
+        Range.selectNodeContents(TextArea);
+        const Selection = window.getSelection();
+        Selection.removeAllRanges();
+        Selection.addRange(Range);
+        TextArea.setSelectionRange(0, Content.length);
+    }else{
+        TextArea.select();
+    }
+
+    try{
+        return document.execCommand('copy');
+    }catch (CopyError){
+        return false;
+    }finally{
+        document.body.removeChild(TextArea);
+    }
 };
 
 export const GetClientLanguage = () => {

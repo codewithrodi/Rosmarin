@@ -1,5 +1,115 @@
 {
     "Server": "https://mail.cgacest.com:7300",
+    "RecommendationLetters": [
+        {
+            "Student": "Rodolfo Herrera",
+            "Document": "Rodolfo-Herrera.pdf",
+            "Campus": "HC",
+            "Position": "Presidente"
+        },
+        {
+            "Student": "Francisco Morales",
+            "Document": "Francisco-Morales.pdf",
+            "Campus": "TP",
+            "Position": "Secretario"
+        },
+        {
+            "Student": "Mathias Opazo",
+            "Document": "Mathias-Opazo.pdf",
+            "Campus": "HC",
+            "Position": "Secretario"
+        },
+        {
+            "Student": "Matías Jara",
+            "Document": "Matias-Jara.pdf",
+            "Campus": "TP",
+            "Position": "Tesorero"
+        },
+        {
+            "Student": "Felipe Lara",
+            "Document": "Felipe-Lara.pdf",
+            "Campus": "HC",
+            "Position": "Tesorero"
+        },
+        {
+            "Student": "Martin Rojas",
+            "Document": "Martin-Rojas.pdf",
+            "Campus": "TP",
+            "Position": "D. Pastoral"
+        },
+        {
+            "Student": "Rafael Ortega",
+            "Document": "Rafael-Ortega.pdf",
+            "Campus": "HC",
+            "Position": "D. Pastoral"
+        },
+        {
+            "Student": "Felipe Rojas",
+            "Document": "Felipe-Rojas.pdf",
+            "Campus": "TP",
+            "Position": "D. Deporte"
+        },
+        {
+            "Student": "Juan Jose Caro",
+            "Document": "Juan-Jose-Caro.pdf",
+            "Campus": "TP",
+            "Position": "D. Arte y Cultura"
+        },
+        {
+            "Student": "Iker Chamorro",
+            "Document": "Iker-Chamorro.pdf",
+            "Campus": "HC",
+            "Position": "D. Arte y Cultura"
+        },
+        {
+            "Student": "Martin Saavedra",
+            "Document": "Martin-Saavedra.pdf",
+            "Campus": "TP",
+            "Position": "D. Ambiente"
+        },
+        {
+            "Student": "Matías Prieto",
+            "Document": "Matias-Prieto.pdf",
+            "Campus": "HC",
+            "Position": "D. Ambiente"
+        },
+        {
+            "Student": "Benjamin Marín",
+            "Document": "Benjamin-Marin.pdf",
+            "Campus": "TP",
+            "Position": "D. Estudio"
+        },
+        {
+            "Student": "Maximiliano Hidalgo",
+            "Document": "Maximiliano-Hidalgo.pdf",
+            "Campus": "HC",
+            "Position": "D. Estudio"
+        },
+        {
+            "Student": "Diego Navarro",
+            "Document": "Diego-Navarro.pdf",
+            "Campus": "HC",
+            "Position": "D. Salud y Seguridad"
+        },
+        {
+            "Student": "Renato Lopez",
+            "Document": "Renato-Lopez.pdf",
+            "Campus": "TP",
+            "Position": "D. Relaciones Exteriores"
+        },
+        {
+            "Student": "Juan Pablo Elgueta",
+            "Document": "Juan-Pablo-Elgueta.pdf",
+            "Campus": "HC",
+            "Position": "D. Acción Social"
+        },
+        {
+            "Student": "Juan Pablo Garrido",
+            "Document": "Juan-Pablo-Garrido.pdf",
+            "Campus": "TP",
+            "Position": "D. Acción Social"
+        }
+    ],
     "Departments": {
         "SECRETARY": "Secretaria",
         "PASTORAL": "Pastoral",

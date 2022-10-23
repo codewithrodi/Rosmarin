@@ -63,7 +63,7 @@ const PrivacyPage = () => {
 
                     <div>
                         <h3>Estabilidad y viabilidad</h3>
-                        <p>Buscamos reducir al máximo cualquier costo posible, sin perder la increíble experiencia de usuario que podemos asignar a nuestros visitantes, esta plataforma web está siendo mantenida por una de las listas de aspirantes al centro de estudiantes del año 2023, lista, la cual contiene miembros pertenecientes al centro de estudiantes actual, nuestra plataforma está en constante cambio, con el fin de poder generar algo robusto, de manera que podamos desarrollar diversas de nuestras propuestas que poseemos, con el fin de garantizar una excelente estadía a nuestros estudiantes, una estadia y/o experiencia nunca antes vista, elaborada por un centro de estudiantes, donde facilitamos atajos digitales que benefician directamente a nuestros alumnos.</p>
+                        <p>Buscamos reducir al máximo cualquier costo posible, sin perder la increíble experiencia de usuario que podemos asignar a nuestros visitantes, esta plataforma web está siendo mantenida por una de las listas de aspirantes al centro de estudiantes del año 2023, lista, la cual contiene miembros pertenecientes al centro de estudiantes actual, nuestra plataforma está en constante cambio, con el fin de poder generar algo robusto, de manera que podamos desarrollar diversas de nuestras propuestas que poseemos, con el fin de garantizar una excelente estadía a nuestros estudiantes, una estadía y/o experiencia nunca antes vista, elaborada por un centro de estudiantes, donde facilitamos atajos digitales que benefician directamente a nuestros alumnos.</p>
                     </div>
                 </article>
             </section>
