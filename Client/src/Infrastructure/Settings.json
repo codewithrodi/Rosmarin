@@ -50,7 +50,13 @@
             "Position": "D. Deporte"
         },
         {
-            "Student": "Juan Jose Caro",
+            "Student": "Agustín Aguilar",
+            "Document": "Agustin-Aguilar.pdf",
+            "Campus": "HC",
+            "Position": "D. Deporte"
+        },
+        {
+            "Student": "Juan José Caro",
             "Document": "Juan-Jose-Caro.pdf",
             "Campus": "TP",
             "Position": "D. Arte y Cultura"
