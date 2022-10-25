@@ -86,6 +86,12 @@
             "Position": "D. Estudio"
         },
         {
+            "Student": "Benjamin Águila",
+            "Document": "Benjamin-Aguila.pdf",
+            "Campus": "TP",
+            "Position": "D. Salud y Seguridad"
+        },
+        {
             "Student": "Diego Navarro",
             "Document": "Diego-Navarro.pdf",
             "Campus": "HC",
