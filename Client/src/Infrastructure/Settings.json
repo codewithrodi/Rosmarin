@@ -126,6 +126,13 @@
             "Document": "Juan-Pablo-Garrido.pdf",
             "Campus": "TP",
             "Position": "D. Acción Social"
+        },
+
+        {
+            "Student": "Mateo Oyarce",
+            "Document": "Mateo-Oyarce.pdf",
+            "Campus": "HC",
+            "Position": "D. Acción Social"
         }
     ],
     "Departments": {
