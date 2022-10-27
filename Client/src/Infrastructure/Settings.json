@@ -7,6 +7,13 @@
             "Campus": "HC",
             "Position": "Presidente"
         },
+
+        {
+            "Student": "Diego Herrada",
+            "Document": "Diego-Herrada.pdf",
+            "Campus": "TP",
+            "Position": "Vicepresidente"
+        },
         {
             "Student": "Francisco Morales",
             "Document": "Francisco-Morales.pdf",
