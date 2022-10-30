@@ -18,7 +18,7 @@
 import React, { useState, useEffect } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 import { Button, CircularProgress, IconButton } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { RiUserVoiceLine, RiTeamLine } from 'react-icons/ri';
 import { IoNavigateOutline } from 'react-icons/io5';
 import { AiOutlineShop, AiOutlineLink } from 'react-icons/ai';
@@ -54,6 +54,7 @@ const HomePage = () => {
     const Navigate = useNavigate();
     const [Width] = UseWindowSize();
     const [GetRecommendationLetter, SetRecommendationLetter] = useState(null);
+    const [SearchParameters] = useSearchParams();
     const Features = [
         [<RiTeamLine />, '+ 20 Integrantes, amplia visión de acontecimientos'],
         [<BiChurch />, 'Representación por igual en ambas sedes, (HC) y (TP)'],
@@ -71,6 +72,11 @@ const HomePage = () => {
 
     useEffect(() => {
         SetTitle('Inicio');
+        switch(SearchParameters.get('Instruction') || ''){
+            case 'SeeLettersOfRecommendation':
+                ScrollToCampaignBox();
+                break;
+        };
         return () => {
             SetRecommendationLetter(null);
         };
@@ -91,6 +97,15 @@ const HomePage = () => {
             [Nodes.Main.style.filter, Nodes.Header.style.filter] = ['', ''];
         }
     }, [GetRecommendationLetter, Width]);
+
+    const ScrollToCampaignBox = () => scroller.scrollTo('Campaign-Box', 
+        { 
+            duration: 100, 
+            delay: 0, 
+            offset: (Width < 1000) ? (-100) : (0), 
+            smooth: true 
+        }
+    );
 
     return (
         <>
@@ -218,12 +233,7 @@ const HomePage = () => {
                     </article>
 
                     <i 
-                        onClick={() => scroller.scrollTo('Campaign-Box', {
-                            duration: 100,
-                            delay: 0,
-                            offset: (Width < 1000) ? (-100) : (0),
-                            smooth: true
-                        })}
+                        onClick={ScrollToCampaignBox}
                     >
                         <IoIosArrowDown />
                     </i>
