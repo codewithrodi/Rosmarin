@@ -74,7 +74,12 @@ const HomePage = () => {
         SetTitle('Inicio');
         switch(SearchParameters.get('Instruction') || ''){
             case 'SeeLettersOfRecommendation':
-                ScrollToCampaignBox();
+                scroller.scrollTo('Recommendations-Letters-Box', { 
+                    duration: 100, 
+                    delay: 0, 
+                    offset: (Width < 1000) ? (-100) : (0), 
+                    smooth: true 
+                });
                 break;
         };
         return () => {
@@ -97,15 +102,6 @@ const HomePage = () => {
             [Nodes.Main.style.filter, Nodes.Header.style.filter] = ['', ''];
         }
     }, [GetRecommendationLetter, Width]);
-
-    const ScrollToCampaignBox = () => scroller.scrollTo('Campaign-Box', 
-        { 
-            duration: 100, 
-            delay: 0, 
-            offset: (Width < 1000) ? (-100) : (0), 
-            smooth: true 
-        }
-    );
 
     return (
         <>
@@ -233,7 +229,7 @@ const HomePage = () => {
                     </article>
 
                     <i 
-                        onClick={ScrollToCampaignBox}
+                        onClick={() => scroller.scrollTo('Campaign-Box', { duration: 100, delay: 0, offset: (Width < 1000) ? (-100) : (0), smooth: true })}
                     >
                         <IoIosArrowDown />
                     </i>
