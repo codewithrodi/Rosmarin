@@ -77,7 +77,7 @@ const HomePage = () => {
                 scroller.scrollTo('Recommendations-Letters-Box', { 
                     duration: 100, 
                     delay: 0, 
-                    offset: (Width < 1000) ? (-100) : (0), 
+                    offset: 0, 
                     smooth: true 
                 });
                 break;
