@@ -26,8 +26,8 @@
             "Position": "Secretario"
         },
         {
-            "Student": "Juan José Caro",
-            "Document": "Juan-Jose-Caro.pdf",
+            "Student": "Matías Jara",
+            "Document": "Matias-Jara.pdf",
             "Campus": "TP",
             "Position": "Tesorero"
         },
@@ -77,6 +77,12 @@
             "Student": "Iker Chamorro",
             "Document": "Iker-Chamorro.pdf",
             "Campus": "HC",
+            "Position": "D. Arte y Cultura"
+        },
+        {
+            "Student": "Juan José Caro",
+            "Document": "Juan-Jose-Caro.pdf",
+            "Campus": "TP",
             "Position": "D. Arte y Cultura"
         },
         {
