@@ -41,27 +41,44 @@ cd Client && npm run start
 ### Configuring the Server application
 Inside the directory that contains the source code of the server, there is an environment file (.env), called "Settings.env", which contains variables that you must complete for the correct execution of the backend of the client application in case of that you want to link to it.
 ```env
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#
+# Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+# Licensed under the MIT license. See LICENSE file in the project root
+# for full license information.
+#
+# =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+#
+# For related information - https://github.com/CodeWithRodi/Rosmarin/
+#
+# Source code for Rosmarin, an open source platform designed for the general 
+# student center of the Salesian Institution in Talca, Chile.
+# 
+# (www.cgacest.com)
+#
+# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ 
 # Secure key that will be used for the different 
 # data encryptions in the course of the different 
 # instructions that can be executed from the server side (backend).
-SECRET_KEY = YourUltraSecureKeyHere
+SECRET_KEY = 
 
 # Address of the server where the client application is 
 # running, unfortunately, even the technology is NOT 
 # guessing and cannot know where the client is being hosted.
-CLIENT_HOST = http://cgacest.com
+CLIENT_HOST = https://www.cgacest.com
 
 # Port where the server application (backend) will 
 # start executing over the network.
-SERVER_PORT = 7000
+SERVER_PORT = 5600
 
 # Hostname where the server will be launched in 
 # complement with the previously established 
 # port on the network.
 SERVER_HOST = 0.0.0.0
 
-DATABASE_HOST = mongodb+srv://idorherz:<password>@cluster0.n9jguaa.mongodb.net/?retryWrites=true&w=majority
-DATABASE_PASSWORD = 55563019
+DATABASE_HOST = 
+DATABASE_PASSWORD = 
 
 # Enter the MongoDB database hostname, this should be the 
 # URI, we recommend using mongo db atlas (www.mongodb.com/cloud/atlas)
@@ -86,12 +103,15 @@ BODY_MAX_SIZE = 100kb
 # get this information from your email account in GMAIL, or 
 # if you have an email server already ready you can assign 
 # its configuration to these variables
-SMTP_HOST = mail.cgacest.com
-SMTP_PORT = 465
-SMTP_USERNAME = noreply@cgacest.com
-SMTP_PASSWORD = 55563019
-SMTP_OPT_FROM = noreply@cgacest.com
+SMTP_HOST = 
+SMTP_PORT = 
+SMTP_USERNAME = 
+SMTP_PASSWORD = 
+SMTP_OPT_FROM = 
+
+PUBLIC_FOLDER = ./Public/
+IMAGES_FOLDER = /Images/
 
 NODE_TLS_REJECT_UNAUTHORIZED = 0
 ```
-##### Rosmarin 0.2.0, Pre Alpha.
+##### Rosmarin 0.3.0, BETA (Almost Stable).
