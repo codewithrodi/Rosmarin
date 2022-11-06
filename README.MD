@@ -53,7 +53,7 @@ CLIENT_HOST = https://www.cgacest.com
 
 # Port where the server application (backend) will 
 # start executing over the network.
-SERVER_PORT = 5600
+SERVER_PORT = 7300
 
 # Hostname where the server will be launched in 
 # complement with the previously established 
