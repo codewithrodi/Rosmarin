@@ -1,5 +1,5 @@
 {
-    "Server": "https://mail.cgacest.com:7300/",
+    "Server": "https://mail.cgacest.com:7300",
     "RecommendationLetters": [
         {
             "Student": "Rodolfo Herrera",
