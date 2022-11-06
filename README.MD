@@ -41,23 +41,6 @@ cd Client && npm run start
 ### Configuring the Server application
 Inside the directory that contains the source code of the server, there is an environment file (.env), called "Settings.env", which contains variables that you must complete for the correct execution of the backend of the client application in case of that you want to link to it.
 ```env
-# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-#
-# Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
-# Licensed under the MIT license. See LICENSE file in the project root
-# for full license information.
-#
-# =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
-#
-# For related information - https://github.com/CodeWithRodi/Rosmarin/
-#
-# Source code for Rosmarin, an open source platform designed for the general 
-# student center of the Salesian Institution in Talca, Chile.
-# 
-# (www.cgacest.com)
-#
-# =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
- 
 # Secure key that will be used for the different 
 # data encryptions in the course of the different 
 # instructions that can be executed from the server side (backend).
