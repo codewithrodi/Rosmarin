@@ -1,0 +1,123 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+ 
+.Generic-WBox-Main #Welcome-Box > #Content-Box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.Generic-WBox-Main #Welcome-Box > #Content-Box > :first-child > h3{
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 3.75rem;
+    letter-spacing: -2px;
+    margin-bottom: 3rem;
+    animation: .3s Left-Slide;
+}
+
+.Generic-WBox-Main #Welcome-Box > #Content-Box > :first-child > p{
+    animation: .5s Left-Slide;
+}
+
+.Generic-WBox-Main #Welcome-Box > #Content-Box > :last-child{
+    animation: .7s Right-Slide;
+}
+
+.Generic-WBox-Main #Welcome-Box > #Content-Box > :first-child{
+    max-width: 600px;
+}
+
+.Generic-WBox-Main #Welcome-Box > :last-child{
+    margin: 2rem 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    animation: 2s Home-Arrow-Bounce infinite;
+}
+
+.Generic-WBox-Main #Welcome-Box > :last-child:hover{
+    opacity: .6;
+}
+
+.Generic-WBox-Main #Welcome-Box > :last-child > svg{
+    cursor: pointer;
+}
+
+.Generic-WBox-Main #Quick-Navegation-Box{
+    margin-top: 3rem;
+}
+
+.Generic-WBox-Main #Quick-Navegation-Box > :first-child{
+    margin-right: 1.5rem;
+    animation: Left-Slide .5s;
+}
+
+.Generic-WBox-Main #Quick-Navegation-Box > :last-child{
+    animation: Left-Slide .7s;
+}
+
+.Generic-WBox-Main #Welcome-Box{
+    padding: 1rem;
+}
+
+@media screen and (max-width: 1000px){
+    .Generic-WBox-Main #Welcome-Box{
+        padding: 0;
+    }
+
+    .Generic-WBox-Main #Welcome-Box > #Content-Box > :first-child > h3{
+        font-size: 2rem;
+        letter-spacing: -1px;
+        line-height: normal;
+    }
+    
+    .Generic-WBox-Main #Welcome-Box > #Content-Box > :last-child{
+        z-index: 10;
+        position: absolute;
+        right: -17rem;
+        filter: blur(25px);
+    }
+
+    .Generic-WBox-Main #Welcome-Box > #Content-Box > :first-child{
+        padding: 1rem;
+        z-index: 20;
+    }
+
+    .Generic-WBox-Main #Content-Box > :first-child > h3{
+        line-height: initial;
+        letter-spacing: -1px;
+        font-size: 2rem;
+    }
+
+    .Generic-WBox-Main #Content-Box > :first-child > p{
+        font-size: .95rem;
+        letter-spacing: 0px;
+    }
+
+    .Generic-WBox-Main #Content-Box img{
+        width: 400px;
+    }
+}

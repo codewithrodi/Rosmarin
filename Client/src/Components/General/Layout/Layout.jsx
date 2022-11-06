@@ -30,6 +30,7 @@ import { FiGithub } from 'react-icons/fi';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { BiWorld, BiLogOut } from 'react-icons/bi';
 import { VscSignIn } from 'react-icons/vsc';
+import { CgShoppingCart } from 'react-icons/cg';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import './Layout.css';
@@ -114,12 +115,20 @@ const Layout = () => {
                                                     <span>Contacto</span>
                                             </EverMenu.Item>
                                             {IsAuthenticated && GetUser.Role === 'admin' && (
-                                                <EverMenu.Item
-                                                    icon={<MdOutlineDashboard />}
-                                                    onClick={() => Navigate('/admin/dashboard/')}
-                                                >
-                                                    <span>Dashboard</span>
-                                                </EverMenu.Item>
+                                                <>
+                                                    <EverMenu.Item
+                                                        icon={<MdOutlineDashboard />}
+                                                        onClick={() => Navigate('/admin/dashboard/')}
+                                                    >
+                                                        <span>Dashboard</span>
+                                                    </EverMenu.Item>
+                                                    <EverMenu.Item
+                                                        icon={<CgShoppingCart />}
+                                                        onClick={() => Navigate('/admin/agreement/create')}
+                                                    >
+                                                        <span>Registrar convenio</span>
+                                                    </EverMenu.Item>
+                                                </>
                                             )}
                                         </EverMenu.Group>
                                         <EverMenu.Divider />

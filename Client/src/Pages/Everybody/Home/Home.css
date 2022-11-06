@@ -42,70 +42,6 @@
     padding: 0;
 }
 
-#Home-Main #Welcome-Box > #Content-Box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 400px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-#Home-Main #Welcome-Box > #Content-Box > :first-child > h3{
-    margin: 0;
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 3.75rem;
-    letter-spacing: -2px;
-    margin-bottom: 3rem;
-    animation: .3s Left-Slide;
-}
-
-#Home-Main #Welcome-Box > #Content-Box > :first-child > p{
-    animation: .5s Left-Slide;
-}
-
-#Home-Main #Welcome-Box > #Content-Box > :last-child{
-    animation: .7s Right-Slide;
-}
-
-#Home-Main #Welcome-Box > #Content-Box > :first-child{
-    max-width: 600px;
-}
-
-#Home-Main #Welcome-Box > :last-child{
-    margin: 2rem 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3rem;
-    animation: 2s Home-Arrow-Bounce infinite;
-}
-
-#Home-Main #Welcome-Box > :last-child:hover{
-    opacity: .6;
-}
-
-#Home-Main #Welcome-Box > :last-child > svg{
-    cursor: pointer;
-}
-
-#Welcome-Box #Quick-Navegation-Box{
-    margin-top: 3rem;
-}
-
-#Welcome-Box #Quick-Navegation-Box > :first-child{
-    margin-right: 1.5rem;
-    animation: Left-Slide .5s;
-}
-
-#Welcome-Box #Quick-Navegation-Box > :last-child{
-    animation: Left-Slide .7s;
-}
-
 #Campaign-Box{
     display: flex;
     padding: 0 1rem;
@@ -302,23 +238,6 @@
         font-size: .95rem;
     }
 
-
-    #Home-Main #Welcome-Box{
-        padding: 0;
-    }
-
-    #Home-Main #Welcome-Box > #Content-Box > :last-child{
-        z-index: 10;
-        position: absolute;
-        right: -17rem;
-        filter: blur(25px);
-    }
-
-    #Home-Main #Welcome-Box > #Content-Box > :first-child{
-        padding: 1rem;
-        z-index: 20;
-    }
-
     #Right-Box .Recommendation-Letter-File > .Basic-Info .Position{
         font-size: .5rem;
     }
@@ -343,21 +262,6 @@
     #Right-Box #Recommendations-Letters-Box{
         margin: 1rem 0;
         max-height: 300px;
-    }
-
-    #Home-Main #Welcome-Box > #Content-Box > :first-child > h3{
-        line-height: initial;
-        letter-spacing: -1px;
-        font-size: 2rem;
-    }
-
-    #Home-Main #Welcome-Box > #Content-Box > :first-child > p{
-        font-size: .95rem;
-        letter-spacing: 0px;
-    }
-
-    #Home-Main #Welcome-Box > #Content-Box img{
-        width: 400px;
     }
 
     #Campaign-Box #Right-Box,

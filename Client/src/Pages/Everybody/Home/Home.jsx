@@ -16,13 +16,12 @@
  ****/
 
 import React, { useState, useEffect } from 'react';
-import { IoIosArrowDown } from 'react-icons/io';
 import { Button, CircularProgress, IconButton } from '@mui/material';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { RiUserVoiceLine, RiTeamLine } from 'react-icons/ri';
 import { IoNavigateOutline } from 'react-icons/io5';
 import { AiOutlineShop, AiOutlineLink } from 'react-icons/ai';
-import { IoIosGitNetwork } from 'react-icons/io';
+import { IoIosGitNetwork, IoIosArrowDown } from 'react-icons/io';
 import { CgGym } from 'react-icons/cg';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
 import { scroller, Element } from 'react-scroll'
@@ -81,11 +80,12 @@ const HomePage = () => {
                     smooth: true 
                 });
                 break;
+            default:
         };
         return () => {
             SetRecommendationLetter(null);
         };
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         const Nodes = {
@@ -166,7 +166,7 @@ const HomePage = () => {
                 </aside>
             )}
 
-            <main id='Home-Main'>
+            <main id='Home-Main' className='Generic-WBox-Main'>
                 <section id='Welcome-Box'>
                     <article id='Content-Box'>
                         <div>

@@ -17,6 +17,12 @@
 
 const NodeMailer = require('nodemailer');
 
+exports.DeleteFile = (Path) => {
+    try{
+        FileSystem.unlinkSync(Path);
+    }catch(Exception){}
+};
+
 exports.RuntimeError = class extends Error{
     constructor(Message, StatusCode){
         super(Message);

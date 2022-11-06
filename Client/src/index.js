@@ -30,10 +30,12 @@ import { MergeObjectValues } from './Utilities/Algorithms';
 import { CoreProvider } from './Services/Core/Context';
 import { AuthenticationProvider } from './Services/Authentication/Context';
 import { MetricProvider } from './Services/Metric/Context';
+import { AgreementProvider } from './Services/Agreement/Context';
 import { Provider as AlertProvider } from 'react-alert'
 import './Utilities/Patches';
 import './Assets/StyleSheets/General.css';
 import './Assets/StyleSheets/Form.css';
+import './Assets/StyleSheets/Generic-WBox.css';
 
 const MaterialTheme = MaterialUI.createTheme({
     palette: {
@@ -65,6 +67,7 @@ ReactDOM.createRoot(document.getElementById('Document-Root'))
           <CoreProvider />,
           <MetricProvider />,
           <AuthenticationProvider />,
+          <AgreementProvider />,
           <MaterialUI.ThemeProvider theme={MaterialTheme} />,
           <EvergreenUI.ThemeProvider value={EvergreenTheme} />,
           <ScrollToTop />

@@ -11,5 +11,10 @@ export const GetAllReports = () =>
     GenericRequestToBackend({
         Path: 'metric/',
         Method: 'GET',
-        SendToken: true
+        SendToken: true,
+        Filter: {
+            Paginate: {
+                Limit: -1
+            }
+        }
     });

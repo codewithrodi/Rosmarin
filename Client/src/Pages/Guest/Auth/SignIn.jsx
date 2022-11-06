@@ -57,7 +57,7 @@ const SignInPage = () => {
             !GetPassword.length ||
             GetErrors.Username !== undefined ||
             GetErrors.Password !== undefined
-        )
+        );
     }, [GetErrors]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const HandleFormSubmit = (Event) => {

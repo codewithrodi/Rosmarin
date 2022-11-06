@@ -1,4 +1,17 @@
 {
+    "Agreement": {
+        "Title": {
+            "MaxLength": 64,
+            "MinLength": 8
+        },
+        "Description": {
+            "MaxLength": 256,
+            "MinLength": 32
+        },
+        "GoogleMapsURL": {
+            "MaxLength": 1024
+        }
+    },
     "Authentication": {
         "Username": {
             "MaxLength": 16,

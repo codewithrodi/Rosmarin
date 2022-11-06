@@ -17,6 +17,7 @@ export const MetricProvider = ({ children }) => {
 
     const GetAllReports = () => MakeServerRequest({
         Setters,
+        
         Axios: { Callback: Service.GetAllReports }
     });
     

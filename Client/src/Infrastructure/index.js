@@ -20,6 +20,8 @@ import Validations from './Validations.json'
 
 export const References = Settings.References;
 
+export const FormattedImageURL = (Image) => Settings.Server + ('/Images/' + Image + '?v=' + Date.now());
+
 delete Settings.References;
 
 export { Validations, Settings };

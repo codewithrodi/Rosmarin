@@ -311,3 +311,7 @@ export const GetClientLanguage = () => {
 
 export const SetTitle = (Title) => 
     document.title = Title + ' - Centro General de Alumnos, Salesianos Talca.';
+
+export const GenericFormattedDate = (DateToFormat) => 
+    new Date(DateToFormat).toLocaleString(
+        GetClientLanguage(), { year: 'numeric', month: 'long', day: '2-digit' });

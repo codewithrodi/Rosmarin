@@ -15,10 +15,6 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
  
-#Dashboard-Main{
-    padding: 0;
-}
-
-#Dashboard-Main > section{
-    padding: 1rem;
+.AgreementCU-Main .ub-box-szg_border-box{
+    z-index: 5 !important;
 }

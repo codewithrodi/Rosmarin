@@ -44,6 +44,8 @@ const Application = () => {
                 {/* Admin Pages */}
                 <Route element={<GeneralComponents.ProtectedRoute Mode='Protect' RestrictTo='Admin' />}>
                     <Route path='/admin/dashboard/' element={<AdminPages.Dashboard />} />
+                    <Route path='/admin/agreement/create/' element={<AdminPages.Agreement.AgreementCU />} />
+                    <Route path='/admin/agreements/update/:Slug/' element={<AdminPages.Agreement.AgreementCU />} />
                 </Route>
             </Route>
             <Route path='*' element={<EverybodyPages.NotFound />} />

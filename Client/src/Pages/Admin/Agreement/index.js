@@ -14,11 +14,11 @@
  *
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
- 
-#Dashboard-Main{
-    padding: 0;
-}
 
-#Dashboard-Main > section{
-    padding: 1rem;
-}
+import AgreementCU from './AgreementCU/';
+
+const Pages = {
+    AgreementCU
+};
+
+export default Pages;

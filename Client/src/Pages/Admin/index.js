@@ -16,9 +16,11 @@
  ****/
 
 import DashboardPage from './Dashboard';
+import Agreement from './Agreement';
 
 const Pages = {
-    Dashboard: DashboardPage
+    Dashboard: DashboardPage,
+    Agreement
 };
 
 export default Pages;

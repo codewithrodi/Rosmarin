@@ -97,6 +97,22 @@
     line-height: .96rem;
 }
 
+#Form-Control-Main #Form-Loading-Container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#Form-Control-Main #Form-Loading-Container > p{
+    margin-top: 1rem;
+    font-size: .95rem;
+}
+
 #Form-Control-Main > form > section:last-child > article{
     margin-top: 2rem;
 }

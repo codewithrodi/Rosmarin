@@ -19,6 +19,7 @@ const Express = require('express');
 const Helmet = require('helmet');
 const MongoSanitize = require('express-mongo-sanitize');
 const XSS = require('xss-clean');
+const Compression = require('compression');
 const HPP = require('hpp');
 const Cors = require('cors');
 const Mongoose = require('mongoose');
@@ -34,6 +35,8 @@ DotEnv.config({ path: './Settings.env' });
 global.Validations = Object.assign({}, JSON.parse(FileSystem.readFileSync('./Validations.json')));
 global.Configuration = Object.assign({}, JSON.parse(FileSystem.readFileSync('./Configuration.json')));
 
+process.env.IMAGES_FOLDER_PATH = process.env.PUBLIC_FOLDER + process.env.IMAGES_FOLDER;
+
 process.on('uncaughtException', (ServerError) => {
     console.error(ServerError.name, ServerError.message);
     process.exit(1);
@@ -47,14 +50,17 @@ const Hostname = process.env.SERVER_HOST || '0.0.0.0';
 
 Application.disable('x-powered-by');
 Application.use(Cors({ origin: process.env.CORS_ORIGIN }));
+Application.use(Compression());
 Application.use(HPP());
 Application.use(XSS());
 Application.use(Helmet());
 Application.use(MongoSanitize());
 Application.use(Express.json({ limit: process.env.BODY_MAX_SIZE || '10kb' }));
+Application.use('/', Express.static(process.env.PUBLIC_FOLDER));
 Application.use('/api/v1/auth', require('./Routes/Authentication'));
 Application.use('/api/v1', require('./Routes/Barebones'));
 Application.use('/api/v1/metric', require('./Routes/Metric'));
+Application.use('/api/v1/agreement', require('./Routes/Agreement'));
 Application.all('*', (Request, Response, Next) => 
     Response.status(404).json({
         Message: `Can't find ${Request.originalUrl} on the server.`

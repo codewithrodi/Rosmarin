@@ -20,6 +20,7 @@ import { MetricContext } from '../../../Services/Metric/Context';
 import { HandleMetricsDistribution } from '../../../Utilities/Metrics';
 import OrderedMetricsView from '../../../Components/Admin/OrderedMetricsView';
 import { SetTitle } from '../../../Utilities/Runtime';
+import './Dashboard.css';
 
 const DashboardPage = () => {
     const { GetAllReports, GetError: GetMetricError, SetError: SetMetricError } = useContext(MetricContext);

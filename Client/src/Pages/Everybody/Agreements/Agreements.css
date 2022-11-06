@@ -19,82 +19,63 @@
     padding: 0;
 }
 
-#Agreements-Main #Presentation-Box{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-#Agreements-Main #Presentation-Box > :first-child{
-    width: 60%;
-}
-
-#Agreements-Main #Presentation-Box > :last-child{
-    width: 30%;
-    position: relative;
-    overflow: hidden;
-    animation: Right-Slide 1.2s;
-}
-
-#Agreements-Main #Presentation-Box > :last-child img{
+#Agreements-Main #Content-Box img{
     width: 400px;
-    height: auto;
-}
-
-#Agreements-Main #Presentation-Box h3{
-    animation: Left-Slide .4s;
-    margin: 0;
-    font-size: 3.5rem;
-    font-weight: 600;
-    line-height: 3.75rem;
-    letter-spacing: -2px;
-}
-
-#Agreements-Main #Presentation-Box p{
-    animation: Left-Slide .8s;
-    margin: 24px 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.1rem;
-    letter-spacing: 0.5px;
 }
 
 #Agreements-Main #Agreements-Box{
-    margin: 2rem auto;
-    width: 80%;
+    margin: 2rem;
+    padding: 0 1rem;
+}
+
+#Agreements-Main .swiper-slide, 
+#Agreements-Main .Agreement-Container img{
+    max-width: 300px !important;
+    width: 300px;
+}
+
+#Agreements-Main .swiper-pagination{
+    position: unset;
+}
+
+#Agreement-Loading-Box{
+    width: 700px;
+    margin: 0 auto;
     text-align: center;
 }
 
-#Agreements-Main #Agreements-Box h2{
-    margin-bottom: 1rem;
+#Agreement-Loading-Box > p{
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 1000px){
-    #Agreements-Main #Presentation-Box{
-        flex-wrap: nowrap;
-    }
-
-    #Agreements-Main #Presentation-Box > :last-child{
+    #Agreement-Loading-Box{
         width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #Agreements-Main #Agreements-Box{
+        margin: 0;
+        padding: 1rem;
     }
 
-    #Agreements-Main #Presentation-Box > :first-child{
+    #Agreements-Main .Agreement-Container:not(:last-child){
+        margin-bottom: 1.5rem;
+    }
+
+    #Agreements-Main .Agreement-Container{
+        width: 300px;
+        max-width: 300px;
+    }
+
+    #Agreements-Box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
+        height: auto;
     }
-    
-    #Agreements-Main #Presentation-Box h3{
-        line-height: initial;
-        letter-spacing: -1px;
-        font-size: 2rem;
-    }
-
-    #Agreements-Main #Presentation-Box p{
-        font-size: .95rem;
-        letter-spacing: 0px;
-    }
-
 }
