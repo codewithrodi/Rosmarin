@@ -170,8 +170,8 @@ const HomePage = () => {
                 <section id='Welcome-Box'>
                     <article id='Content-Box'>
                         <div>
-                            <h3>¡Conoce nuestra lista, acompañanos e innovemos juntos!</h3>
-                            <p>Una nueva lista conformada por más de 20 integrantes con decenas de propuestas y múltiples convenios. Porque votar informado es importante, ¡Conocenos y vota a consciencia, tu futuro está en tus manos!</p>
+                            <h3>¡Somos la Lista A, acompañanos e innovemos juntos!</h3>
+                            <p>Una lista conformada por más de 20 integrantes con decenas de propuestas y múltiples convenios. Porque votar informado es importante, ¡Conocenos y vota a consciencia, tu futuro está en tus manos!</p>
                             <div id='Quick-Navegation-Box'>
                                 {(Width > 1000) && (
                                     <Button
