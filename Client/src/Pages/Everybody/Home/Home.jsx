@@ -154,7 +154,6 @@ const HomePage = () => {
 
                     <article id='PDF-Document-Box'>
                         <Document 
-                            renderMode='svg'
                             loading={
                                 <div id='PDF-Rendering-Box'>
                                     <CircularProgress />
