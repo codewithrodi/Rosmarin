@@ -19,7 +19,7 @@ import Home from './Home';
 import Auth from './Auth';
 import Privacy from './Privacy';
 import Agreements from './Agreements';
-import NotFound from './NotFound';
+import NotFound from './NotFound/';
 import Contact from './Contact';
 
 const Pages = {

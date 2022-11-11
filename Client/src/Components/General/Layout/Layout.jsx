@@ -25,12 +25,13 @@ import UseWindowSize from '../../../Hooks/WindowSize';
 import { AuthenticationContext } from '../../../Services/Authentication/Context';
 import { References } from '../../../Infrastructure';
 import { AiOutlineShop } from 'react-icons/ai';
-import { RiLockPasswordLine, RiUserVoiceLine } from 'react-icons/ri';
+import { RiLockPasswordLine } from 'react-icons/ri';
 import { FiGithub } from 'react-icons/fi';
+import { BsChatRight, BsShopWindow } from 'react-icons/bs';
 import { MdOutlineDashboard } from 'react-icons/md';
 import { BiWorld, BiLogOut } from 'react-icons/bi';
+import { SlSocialInstagram, SlBookOpen } from 'react-icons/sl';
 import { VscSignIn } from 'react-icons/vsc';
-import { CgShoppingCart } from 'react-icons/cg';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import './Layout.css';
@@ -110,9 +111,9 @@ const Layout = () => {
                                             </EverMenu.Item>
                                             <EverMenu.Item
                                                 onClick={() => Navigate('/contact')}
-                                                icon={<RiUserVoiceLine />}
+                                                icon={<BsChatRight />}
                                             >
-                                                    <span>Contacto</span>
+                                                <span>Contacto</span>
                                             </EverMenu.Item>
                                             {IsAuthenticated && GetUser.Role === 'admin' && (
                                                 <>
@@ -123,7 +124,7 @@ const Layout = () => {
                                                         <span>Dashboard</span>
                                                     </EverMenu.Item>
                                                     <EverMenu.Item
-                                                        icon={<CgShoppingCart />}
+                                                        icon={<BsShopWindow />}
                                                         onClick={() => Navigate('/admin/agreement/create')}
                                                     >
                                                         <span>Registrar convenio</span>
@@ -161,6 +162,18 @@ const Layout = () => {
                                         </EverMenu.Group>
                                         <EverMenu.Divider />
                                         <EverMenu.Group>
+                                            <EverMenu.Item
+                                                onClick={() => window.location.href = References.Instagram}
+                                                icon={<SlSocialInstagram />}
+                                            >
+                                                <span>Instagram</span>
+                                            </EverMenu.Item>
+                                            <EverMenu.Item
+                                                onClick={() => window.location.href = References.Documentation}
+                                                icon={<SlBookOpen />}
+                                            >
+                                                <span>Documentación</span>
+                                            </EverMenu.Item>
                                             <EverMenu.Item
                                                 onClick={() => window.location.href = References.Github}
                                                 icon={<FiGithub />}

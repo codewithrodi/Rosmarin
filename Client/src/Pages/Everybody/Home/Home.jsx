@@ -18,7 +18,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, CircularProgress, IconButton } from '@mui/material';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { RiUserVoiceLine, RiTeamLine } from 'react-icons/ri';
+import { RiTeamLine } from 'react-icons/ri';
 import { IoNavigateOutline } from 'react-icons/io5';
 import { AiOutlineShop, AiOutlineLink } from 'react-icons/ai';
 import { IoIosGitNetwork, IoIosArrowDown } from 'react-icons/io';
@@ -29,6 +29,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import { Settings, References } from '../../../Infrastructure';
 import { CopyToClipboard, DownloadExternalFile, SetTitle, EventFire } from '../../../Utilities/Runtime';
 import { SiOpslevel } from 'react-icons/si';
+import { SlSocialInstagram, SlBookOpen } from 'react-icons/sl';
 import { useAlert } from 'react-alert';
 import { VscGithubAlt } from 'react-icons/vsc';
 import { BiWorld, BiChurch, BiArrowBack, BiMessageSquare } from 'react-icons/bi';
@@ -36,6 +37,7 @@ import {
     BsCloudFog2, 
     BsThreeDotsVertical,
     BsBarChartLine,
+    BsChatRight,
     BsLightning,
     BsShopWindow,
     BsDownload, 
@@ -55,7 +57,7 @@ const HomePage = () => {
     const [GetRecommendationLetter, SetRecommendationLetter] = useState(null);
     const [SearchParameters] = useSearchParams();
     const Features = [
-        [<RiTeamLine />, '+ 20 Integrantes, amplia visión de acontecimientos'],
+        [<RiTeamLine />, '+20 Integrantes, amplia visión de acontecimientos'],
         [<BiChurch />, 'Representación por igual en ambas sedes, (HC) y (TP)'],
         [<IoIosGitNetwork />, 'Alrededor de dos docenas de proyectos'],
         [<BsCloudFog2 />, 'Un nuevo proceso de digitalización'],
@@ -152,6 +154,7 @@ const HomePage = () => {
 
                     <article id='PDF-Document-Box'>
                         <Document 
+                            renderMode='svg'
                             loading={
                                 <div id='PDF-Rendering-Box'>
                                     <CircularProgress />
@@ -189,7 +192,7 @@ const HomePage = () => {
                                                 {(Width < 1000) && (
                                                     <EverMenu.Item
                                                         onClick={() => Navigate('/contact')}
-                                                        icon={<RiUserVoiceLine />}
+                                                        icon={<BsChatRight />}
                                                     >
                                                         <span>Contacto</span>
                                                     </EverMenu.Item>
@@ -203,6 +206,18 @@ const HomePage = () => {
                                             </EverMenu.Group>
                                             <EverMenu.Divider />
                                             <EverMenu.Group>
+                                                <EverMenu.Item
+                                                    onClick={() => window.location.href = References.Instagram}
+                                                    icon={<SlSocialInstagram />}
+                                                >
+                                                    <span>Instagram</span>
+                                                </EverMenu.Item>
+                                                <EverMenu.Item
+                                                    onClick={() => window.location.href = References.Documentation}
+                                                    icon={<SlBookOpen />}
+                                                >
+                                                    <span>Documentación</span>
+                                                </EverMenu.Item>
                                                 <EverMenu.Item
                                                     onClick={() => window.location.href = References.Github}
                                                     icon={<VscGithubAlt />}
@@ -273,7 +288,7 @@ const HomePage = () => {
                                     onClick={(Event) => (Event.target.classList.contains('Recommendation-Letter-File') || (document.getElementById(Index).contains(Event.target))) && (SetRecommendationLetter(Data))}
                                     className='Recommendation-Letter-File'
                                 >
-                                    <div id={Index} className='Basic-Info'>
+                                    <div className='Basic-Info'>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1">
                                             <path
                                                 style={{

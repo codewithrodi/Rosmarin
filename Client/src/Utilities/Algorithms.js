@@ -40,6 +40,8 @@ export const FormatDuration = (Seconds) => {
     return DateString;
 };
 
+export const GenerateArray = (Length) => Array.from({length: Length}, (_, Iterator) => Iterator + 1);
+
 export const ReadableFileSize = (Bytes, SI = false, DP = 1) => {
     const Thresh = SI ? 1000 : 1024;
     if(Math.abs(Bytes) < Thresh)

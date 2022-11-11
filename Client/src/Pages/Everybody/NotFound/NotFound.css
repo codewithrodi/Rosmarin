@@ -1,0 +1,147 @@
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
+@keyframes Floating{
+    0%{
+        transform: translate3d(0, 0, 0);
+    }
+    45%{
+        transform: translate3d(0, -10%, 0);
+    }
+    55%{
+        transform: translate3d(0, -10%, 0);
+    }
+    100%{
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes FloatingShadow{
+    0%{
+        transform: scale(1);
+    }
+    45%{
+        transform: scale(0.85);
+    }
+    55%{
+        transform: scale(0.85);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+#NotFound-Main{
+    color: #323232;
+    position: relative;
+    height: 100vh;
+    text-align: center;
+}
+
+#NotFound-Main h1{
+    margin-top: 32px;
+}
+
+#NotFound-Main .Boo-Wrapper{
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+#NotFound-Main .Boo-Wrapper  p{
+    margin: 1.5rem 0;
+}
+
+#NotFound-Main .Boo{
+    width: 160px;
+    height: 184px;
+    background-color: #f7f7f7;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3.3939393939px solid #9b9b9b;
+    border-bottom: 0;
+    overflow: hidden;
+    border-radius: 80px 80px 0 0;
+    box-shadow: -16px 0 0 2px rgba(234, 234, 234, 0.5) inset;
+    position: relative;
+    padding-bottom: 32px;
+    animation: Floating 3s ease-in-out infinite;
+}
+
+#NotFound-Main .Boo::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: -18.8235294118px;
+    bottom: -8.3116883117px;
+    width: calc(100% + 32px);
+    height: 32px;
+    background-repeat: repeat-x;
+    background-size: 32px 32px;
+        background-position: left bottom;
+        background-image: linear-gradient(-45deg, #f7f7f7 16px, transparent 0), linear-gradient(45deg, #f7f7f7 16px, transparent 0), linear-gradient(-45deg, #9b9b9b 18.8235294118px, transparent 0), linear-gradient(45deg, #9b9b9b 18.8235294118px, transparent 0);
+}
+
+#NotFound-Main .Boo .Face{
+    width: 24px;
+    height: 3.2px;
+    border-radius: 5px;
+    background-color: #9b9b9b;
+    position: absolute;
+    left: 50%;
+    bottom: 56px;
+    transform: translateX(-50%);
+}
+
+#NotFound-Main .Boo .Face::before, #NotFound-Main .Boo .Face::after{
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #9b9b9b;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 40px;
+}
+
+#NotFound-Main .Boo .Face::before{
+    left: -24px;
+}
+
+#NotFound-Main .Boo .Face::after{
+    right: -24px;
+}
+
+#NotFound-Main .Shadow{
+    width: 128px;
+    height: 16px;
+    background-color: rgba(234, 234, 234, 0.75);
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 50%;
+    animation: FloatingShadow 3s ease-in-out infinite;
+}
+
+#NotFound-Main a{
+    margin-top: 2rem;
+}

@@ -12,7 +12,7 @@ const CoverUploader = ({ OriginalPhoto, SetPhoto, ...Arguments }) => (
         accept='.png, .jpg, .jpeg'
         inputContent={
             <figure id='Input-Content-Container'>
-                <img {...Arguments} />
+                <img alt='Ilustración' {...Arguments} />
                 <figcaption>
                     <p>Al cambiar la foto del acuerdo puedes mejorar o perjudicar la apariencia visual de la sección correspondiente de la página, ten cuidado.</p>
                 </figcaption>

@@ -1,34 +1,62 @@
-import React, { useEffect, useRef, useContext } from 'react';
+/***
+ * Copyright (C) Rodolfo Herrera Hernandez. All rights reserved.
+ * Licensed under the MIT license. See LICENSE file in the project root
+ * for full license information.
+ *
+ * =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+ *
+ * For related information - https://github.com/CodeWithRodi/Rosmarin/
+ *
+ * Source code for Rosmarin, an open source platform designed for the general 
+ * student center of the Salesian Institution in Talca, Chile.
+ * 
+ * (www.cgacest.com)
+ *
+ * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ ****/
+
+import React, { useEffect, useRef, useContext, useState } from 'react';
 import { GoLocation } from 'react-icons/go';
 import { FormattedImageURL } from '../../../Infrastructure';
 import { BsThreeDotsVertical } from 'react-icons/bs';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
 import { IconButton } from '@mui/material';
-import { AiOutlineFacebook, AiOutlineInstagram } from 'react-icons/ai';
-import { FiEdit2 } from 'react-icons/fi';
+import { AiOutlineInstagram } from 'react-icons/ai';
+import { FiEdit2, FiFacebook } from 'react-icons/fi';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { AuthenticationContext } from '../../../Services/Authentication/Context';
 import { AgreementContext } from '../../../Services/Agreement/Context';
 import { BsTrash } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
+import Skeleton from './Skeleton';
 import './Agreement.css';
 
 const Agreement = ({ Data }) => {
     const { GetUser } = useContext(AuthenticationContext);
     const { SetAgreementServiceBuffer } = useContext(AgreementContext);
+    const [GetIsImageLoading, SetIsImageLoading] = useState(true);
     const Navigate = useNavigate();
     const TitleReference = useRef(null);
     const OptionsReference = useRef(null);
 
     useEffect(() => {
-        if(!TitleReference || !OptionsReference)
-            return;
-        OptionsReference.current.style.height = TitleReference.current.clientHeight + 'px';
+        if(TitleReference && OptionsReference)
+            OptionsReference.current.style.height = TitleReference.current.clientHeight + 'px';
+        return () => {
+            SetIsImageLoading(true);
+        };
     }, []);
 
     return (
         <figure className='Agreement-Container'>
-            <img src={FormattedImageURL(Data.Photo)} alt='Ilustración del local' />
+            {(GetIsImageLoading) && (
+                <Skeleton IsImageLoading={true} />
+            )}
+            <img 
+                onLoad={() => SetIsImageLoading(false)}
+                hidden={GetIsImageLoading}
+                src={FormattedImageURL(Data.Photo)} 
+                alt='Ilustración del local' />
             <figcaption>
                 <div ref={TitleReference} className='Title-Container'>
                     <h3>{Data.Title}</h3>
@@ -53,7 +81,7 @@ const Agreement = ({ Data }) => {
                                     )}
                                     {(Data.Facebook?.length >= 1) && (
                                         <EverMenu.Item
-                                            icon={<AiOutlineFacebook />}
+                                            icon={<FiFacebook />}
                                             onClick={() => window.location.href = `https://www.facebook.com/${Data.Facebook}/`}
                                         >
                                             <span>Facebook</span>

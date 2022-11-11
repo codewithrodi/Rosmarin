@@ -19,24 +19,20 @@ import React, { useEffect, useState, useContext } from 'react';
 import ColorsBox from '../../../Components/General/ColorsBox';
 import Bags from '../../../Assets/Images/Agreements/Bags.png'
 import Agreement from '../../../Components/Agreements/Agreement';
+import Skeleton from '../../../Components/Agreements/Agreement/Skeleton';
 import { AgreementContext } from '../../../Services/Agreement/Context';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { BiMessageSquare } from 'react-icons/bi';
 import { AiOutlineTeam } from 'react-icons/ai';
 import { IoNavigateOutline } from 'react-icons/io5';
-import { FreeMode, Pagination, Autoplay } from 'swiper';
 import { SetTitle } from '../../../Utilities/Runtime';
-import { Button, CircularProgress } from '@mui/material';
+import { Button } from '@mui/material';
 import { scroller } from 'react-scroll';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { IoIosArrowDown } from 'react-icons/io';
 import UseWindowSize from '../../../Hooks/WindowSize';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import './Agreements.css';
+import { GenerateArray } from '../../../Utilities/Algorithms';
 
 const AgreementsPage = () => {
     const [Width] = UseWindowSize();
@@ -69,7 +65,7 @@ const AgreementsPage = () => {
             SetIsComponentMounted(false);
             SetAgreements([]);
         };
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <main id='Agreements-Main' className='Generic-WBox-Main'>
@@ -139,52 +135,20 @@ const AgreementsPage = () => {
                 }}
                 ComplementBox={{
                     Title: '¿Por qué lo hacemos?',
-                    Description: 'Nuestro propósito como centro de estudiantes es ofrecer lo mejor de nuestra voluntad a los estudiantes, hayan votado o no por nosotros, buscamos el bien común, y la idea de hacer acuerdos con terceros abre una nueva puerta a la posibilidad de que el centro de estudiantes pueda brindar beneficios por sí solo a los estudiantes, ofreciendo así diversos tipos de beneficios en locales dentro de la ciudad.'
+                    Description: 'Nuestro propósito como aspirantes al Centro General de Alumnos es ofrecer una grata experiencia al alumnado, hayan votado o no por nosotros, buscamos el bien común, y la idea de hacer acuerdos con terceros abre una nueva puerta a la posibilidad de que el centro de estudiantes pueda brindar beneficios por sí solo a los estudiantes, ofreciendo así diversos tipos de beneficios en locales dentro de la ciudad.'
                 }}
             />
 
             <section id='Agreements-Box'>
                 {(GetIsLoading) ? (
-                    <article id='Agreement-Loading-Box'>
-                        <CircularProgress size='2rem' className='Circular-Loader' />
-                        <p>Tenga paciencia, estamos procesando tu solicitud, los acuerdos se están negociando con el servidor...</p>
-                    </article>
+                    (GenerateArray(8).map(() => (<Skeleton />)))
                 ) : (
-                    (Width > 768) ? (
-                        <Swiper
-                            slidesPerView={3}
-                            spaceBetween={100}
-                            freeMode={true}
-                            loop={true}
-                            modules={[FreeMode, Pagination, Autoplay]}
-                            autoplay={{
-                                delay: 2500,
-                                pauseOnMouseEnter: true
-                            }}
-                            keyboard={{
-                                enabled: true,
-                            }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                        >
-                            {GetAgreements.map((Data, Index) => (
-                                <SwiperSlide>
-                                    <Agreement
-                                        key={Index}
-                                        Data={Data}
-                                    />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    ) : (
-                        GetAgreements.map((Data, Index) => (
-                            <Agreement
-                                key={Index}
-                                Data={Data}
-                            />
-                        ))
-                    )
+                    (GetAgreements.map((Data, Index) => (
+                        <Agreement
+                            key={Index}
+                            Data={Data}
+                        />
+                    )))
                 )}
             </section>
         </main>

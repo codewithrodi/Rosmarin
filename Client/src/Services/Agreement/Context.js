@@ -85,7 +85,7 @@ export const AgreementProvider = ({ children }) => {
         if(!['/admin/agreements/update', '/agreements'].includes(Location.pathname) 
                 && Object.keys(GetAgreementServiceBuffer).length)
             SetAgreementServiceBuffer({});
-    }, [Location]);
+    }, [Location]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <AgreementContext.Provider

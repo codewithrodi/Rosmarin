@@ -126,7 +126,7 @@ const CreateAgreementPage = () => {
             SetIsComponentMounted(false);
             SetOriginalPhoto('');
         };
-    }, []); 
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if(Slug){
