@@ -154,6 +154,7 @@ const HomePage = () => {
 
                     <article id='PDF-Document-Box'>
                         <Document 
+                            renderMode='canvas'
                             loading={
                                 <div id='PDF-Rendering-Box'>
                                     <CircularProgress />
