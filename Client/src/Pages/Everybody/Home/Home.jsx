@@ -287,7 +287,7 @@ const HomePage = () => {
                                     onClick={(Event) => (Event.target.classList.contains('Recommendation-Letter-File') || (document.getElementById(Index).contains(Event.target))) && (SetRecommendationLetter(Data))}
                                     className='Recommendation-Letter-File'
                                 >
-                                    <div className='Basic-Info'>
+                                    <div className='Basic-Info' id={Index}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" version="1">
                                             <path
                                                 style={{
