@@ -223,7 +223,39 @@
     margin-top: 1rem;
 }
 
+#PDF-Document-Box .react-pdf__Document{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#PDF-Document-Box .react-pdf__Page{
+    max-width: calc(100% - 2em);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+#PDF-Document-Box .react-pdf__Page canvas{
+    max-width: 100%;
+    height: auto !important;
+    margin: 0 auto;
+}
+
+#PDF-Document-Box .react-pdf__Page__textContent,
+#PDF-Document-Box .react-pdf__Page__annotations{
+    display: none !important;
+    height: 0px !important;
+}
+
+#PDF-Document-Box .react-pdf__message{
+    padding: 20px;
+    color: white;
+}
+  
 @media screen and (max-width: 1000px){
+    #PDF-Document-Box .react-pdf__Page{
+        margin-top: 3rem !important;
+    }
+    
     #PDF-Rendering-Box > :first-child *{
         color: #000000 !important;
     }
@@ -274,10 +306,6 @@
     #Campaign-Box,
     #Campaign-Box #Left-Box{
         border: none;
-    }
-
-    #PDF-Document-Box .react-pdf__Page{
-        margin-top: 3rem !important;
     }
 
     #Campaign-Box #Right-Box{
