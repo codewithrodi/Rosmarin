@@ -143,16 +143,6 @@ cite{
 .Touchable{
     cursor: pointer;
 }
-
-.swiper{
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide img{
-    display: block;
-    object-fit: cover;
-}
   
 @media (max-width: 1000px){
     .Desktop-Box{
