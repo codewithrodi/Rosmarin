@@ -21,9 +21,11 @@ import Privacy from './Privacy';
 import Agreements from './Agreements';
 import NotFound from './NotFound/';
 import Contact from './Contact';
+import AboutUs from './AboutUs';
 
 const Pages = {
     Home,
+    AboutUs,
     Contact,
     NotFound,
     Privacy,

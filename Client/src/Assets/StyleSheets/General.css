@@ -15,6 +15,16 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+@keyframes FadeIn{
+    0%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
 @keyframes Left-Slide{
     from{
         transform: translateX(-700px);
@@ -52,8 +62,7 @@ html, body, #Document-Root, main{
 }
 
 body{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -71,10 +80,11 @@ main{
 
 a{
     color: #000000 !important;
+    cursor: pointer;
 }
 
 a:hover{
-    opacity: .8;
+    text-decoration: underline;
 }
 
 .Cite-Box{
@@ -140,8 +150,27 @@ cite{
     display: none !important;
 }
 
+.Gray-Text{
+    color: #465a69;
+    font-weight: normal;
+    letter-spacing: 0;
+    font-size: .95rem;
+    line-height: 150%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
 .Touchable{
     cursor: pointer;
+}
+
+.MuiAccordionSummary-root{
+    padding: 0 !important;
+}
+
+.Blue-Highlight{
+    color: #0070f3;
+    font-weight: 700;
 }
   
 @media (max-width: 1000px){

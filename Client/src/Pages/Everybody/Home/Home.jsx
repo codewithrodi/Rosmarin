@@ -20,7 +20,7 @@ import { Button, CircularProgress, IconButton } from '@mui/material';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { RiTeamLine } from 'react-icons/ri';
 import { IoNavigateOutline } from 'react-icons/io5';
-import { AiOutlineShop, AiOutlineLink } from 'react-icons/ai';
+import { AiOutlineShop, AiOutlineLink, AiOutlineTeam } from 'react-icons/ai';
 import { IoIosGitNetwork, IoIosArrowDown } from 'react-icons/io';
 import { CgGym } from 'react-icons/cg';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
@@ -32,7 +32,7 @@ import { SiOpslevel } from 'react-icons/si';
 import { SlSocialInstagram, SlBookOpen } from 'react-icons/sl';
 import { useAlert } from 'react-alert';
 import { VscGithubAlt } from 'react-icons/vsc';
-import { BiWorld, BiChurch, BiArrowBack, BiMessageSquare } from 'react-icons/bi';
+import { BiWorld, BiChurch, BiArrowBack } from 'react-icons/bi';
 import { 
     BsCloudFog2, 
     BsThreeDotsVertical,
@@ -178,10 +178,10 @@ const HomePage = () => {
                             <div id='Quick-Navegation-Box'>
                                 {(Width > 1000) && (
                                     <Button
-                                        startIcon={<BiMessageSquare />}
-                                        onClick={() => Navigate('/contact')}
+                                        startIcon={<AiOutlineTeam />}
+                                        onClick={() => Navigate('/about-us')}
                                         variant='contained'
-                                    >Contactanos</Button>
+                                    >Conocenos</Button>
                                 )}
 
                                 <Popover
@@ -191,12 +191,18 @@ const HomePage = () => {
                                             <EverMenu.Group>
                                                 {(Width < 1000) && (
                                                     <EverMenu.Item
-                                                        onClick={() => Navigate('/contact')}
-                                                        icon={<BsChatRight />}
+                                                        onClick={() => Navigate('/about-us')}
+                                                        icon={<AiOutlineTeam />}
                                                     >
-                                                        <span>Contacto</span>
+                                                        <span>Conocenos</span>
                                                     </EverMenu.Item>
                                                 )}
+                                                <EverMenu.Item
+                                                    onClick={() => Navigate('/contact')}
+                                                    icon={<BsChatRight />}
+                                                >
+                                                    <span>Contacto</span>
+                                                </EverMenu.Item>
                                                 <EverMenu.Item
                                                     onClick={() => Navigate('/agreements')}
                                                     icon={<BsShopWindow />}

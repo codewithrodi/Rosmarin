@@ -33,6 +33,7 @@ const Application = () => {
                 <Route path='/terms-and-privacy/' element={<EverybodyPages.Privacy />} />
                 <Route path='/agreements/' element={<EverybodyPages.Agreements />} />
                 <Route path='/contact/' element={<EverybodyPages.Contact />} />
+                <Route path='/about-us/' element={<EverybodyPages.AboutUs />} />
                 <Route path='/auth/forgot-password/' element={<EverybodyPages.Auth.ForgotPassword />} />
                 <Route path='/auth/reset-password/:ResetPasswordToken/' element={<EverybodyPages.Auth.ResetPassword />} />
 

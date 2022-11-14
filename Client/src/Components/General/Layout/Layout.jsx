@@ -24,7 +24,7 @@ import Hamburger from 'hamburger-react'
 import UseWindowSize from '../../../Hooks/WindowSize';
 import { AuthenticationContext } from '../../../Services/Authentication/Context';
 import { References } from '../../../Infrastructure';
-import { AiOutlineShop } from 'react-icons/ai';
+import { AiOutlineShop, AiOutlineTeam } from 'react-icons/ai';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { FiGithub } from 'react-icons/fi';
 import { BsChatRight, BsShopWindow } from 'react-icons/bs';
@@ -108,6 +108,12 @@ const Layout = () => {
                                                 icon={<AiOutlineShop />}
                                             >
                                                 <span>Convenios</span>
+                                            </EverMenu.Item>
+                                            <EverMenu.Item
+                                                onClick={() => Navigate('/about-us')}
+                                                icon={<AiOutlineTeam />}
+                                            >
+                                                <span>Conocenos</span>
                                             </EverMenu.Item>
                                             <EverMenu.Item
                                                 onClick={() => Navigate('/contact')}

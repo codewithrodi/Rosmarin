@@ -1,0 +1,306 @@
+#AboutUs-Main{
+    animation: FadeIn .5s;
+    padding: 0;
+}
+
+#AboutUs-Main #Cutted-Info-Box{
+    margin: 7rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+}
+
+#AboutUs-Main #Cutted-Info-Box > :first-child{
+    width: 45%;
+    height: 370px; /* ! Default Size for Skeleton Loader */
+}
+
+#AboutUs-Main #Cutted-Info-Box > :last-child{
+    width: 55%;
+}
+
+#AboutUs-Main #Cutted-Info-Box > :last-child img{
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#AboutUs-Main #Cutted-Info-Box > #Accordion-Box{
+    overflow-y: scroll;
+    padding: 0 2rem 0 0;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#AboutUs-Main #Cutted-Info-Box > #Accordion-Box > :last-child{
+    margin-top: 1rem;
+}
+
+#AboutUs-Main #Cutted-Info-Box > #Accordion-Box > :first-child > :last-child{
+    margin-top: .7rem;
+}
+
+#AboutUs-Main #WorldMap-Box{
+    display: flex;
+    margin: 3.5rem 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#AboutUs-Main #WorldMap-Box > :first-child > h3{
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+}
+
+#AboutUs-Main #WorldMap-Box > :first-child > p{
+    width: 70%;
+    margin: 1rem auto 3rem;
+}
+
+#AboutUs-Main #KnowUs-Box{
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+#AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child{
+    text-align: center;
+}
+
+#AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child > h2:first-child{
+    margin-top: 4rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: .9rem;
+    color: #0070f3;
+}
+
+#AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child > h3{
+    font-size: 2.5rem;
+    max-width: 40ch;
+    margin: 2.5rem auto;
+}
+
+#AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child > h2:last-child{
+    font-weight: 100;
+    line-height: 1.65rem;
+    max-width: 50ch;
+    font-size: 1.2rem;
+    margin: 0 auto;
+}
+
+#AboutUs-Main #KnowUs-Box #Purposes-Box{
+    margin: 7rem auto 0;
+    max-width: 1000px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#AboutUs-Main #KnowUs-Box #Purposes-Box > div{
+    width: 310px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#AboutUs-Main #KnowUs-Box #Purposes-Box > div > div:first-child{
+    width: 2.5rem;
+    margin-right: 1rem;
+    padding: 12px;
+    background: #000000;
+    color: #FFFFFF;
+    margin-top: 7px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#AboutUs-Main #KnowUs-Box #Purposes-Box > div > div:last-child > :first-child{
+    font-size: 1.5rem;
+    letter-spacing: -.029375rem;
+    font-weight: 600;
+    line-height: 2rem
+}
+
+#AboutUs-Main #KnowUs-Box #Purposes-Box > div > div:last-child > :last-child{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: #666666;
+}
+
+#AboutUs-Main #Features-Box > article{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#AboutUs-Main #Features-Box > article:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+#AboutUs-Main #Features-Box > article:nth-child(even) > :first-child{
+    text-align: end;
+}
+
+#AboutUs-Main #Features-Box > article img{
+    width: 80%;
+}
+
+#AboutUs-Main #Features-Box > article > :first-child,
+#AboutUs-Main #Features-Box > article > :last-child{
+    width: 50%;
+}
+
+#AboutUs-Main #Features-Box > article > :last-child{
+    padding: 0 1rem;
+}
+
+#AboutUs-Main #Features-Box > article > :last-child > h3{
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -.058125rem;
+    line-height: 2.3rem;
+    margin-bottom: 24px;
+}
+
+#AboutUs-Main #Features-Box > article > :last-child > p{
+    font-weight: 400;
+    line-height: 1.8rem;
+    color: #666666;
+    font-size: 1.1rem;
+    letter-spacing: -.020625rem;
+    margin-bottom: 35px;
+}
+
+@media screen and (max-width: 1000px){
+    #AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child > h2:first-child{
+        margin-top: 1rem;
+        animation: Left-Slide .5s;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child > h3{
+        animation: Left-Slide .7s;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Our-Mission-Box > :first-child > h2:last-child{
+        animation: Left-Slide 1s;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Purposes-Box > div:nth-child(odd){
+        animation: Left-Slide .5s;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Purposes-Box > div:nth-child(even){
+        animation: Right-Slide .7s;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Purposes-Box{
+        margin-top: 4rem;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Purposes-Box > div:not(:last-child){
+        margin-bottom: 48px;
+    }
+
+    #AboutUs-Main #Cutted-Info-Box{
+        margin: 0;
+        padding: 1rem;
+    }
+
+    #AboutUs-Main #Features-Box{
+        text-align: center;
+    }
+
+    #AboutUs-Main #Features-Box > article > :last-child > h3{
+        font-size: 2.1rem;
+    }
+
+    #AboutUs-Main #Features-Box > article:nth-child(even){
+        flex-direction: column-reverse;
+    }
+
+    #AboutUs-Main #Features-Box > article:nth-child(even) > :first-child{
+        text-align: center;
+    }
+
+    #AboutUs-Main #Features-Box > article{
+        align-items: flex-start;
+        padding: 2rem 0;
+    }
+
+    #AboutUs-Main #Features-Box > article > :first-child{
+        margin-top: 2rem;
+    }
+
+    #AboutUs-Main #Features-Box > article > :first-child,
+    #AboutUs-Main #Features-Box > article > :last-child{
+        width: 100%;
+    }
+
+    #AboutUs-Main #Cutted-Info-Box,
+    #AboutUs-Main #Features-Box > article{
+        flex-direction: column-reverse;
+    }
+
+    #AboutUs-Main #Cutted-Info-Box > :last-child img{
+        border-radius: .3rem;
+    }
+
+    #AboutUs-Main #KnowUs-Box #Purposes-Box,
+    #AboutUs-Main #Cutted-Info-Box{
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 2rem;
+    }
+
+    #AboutUs-Main #Cutted-Info-Box > :last-child{
+        margin-bottom: 2rem;
+    }
+
+    #AboutUs-Main #Cutted-Info-Box > :last-child,
+    #AboutUs-Main #Cutted-Info-Box > :first-child{
+        width: 100%;
+    }
+
+    #AboutUs-Main #WorldMap-Box{
+        padding: 1rem;
+        margin: 0;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    #AboutUs-Main #WorldMap-Box > :first-child > h3{
+        margin: 0;
+        font-size: 2.4rem;
+    }
+
+    #AboutUs-Main #Cutted-Info-Box > #Accordion-Box{
+        max-height: unset !important;
+        height: auto !important;
+    }
+
+    #AboutUs-Main #WorldMap-Box > :last-child > svg{
+        height: auto;
+    }
+
+    #AboutUs-Main #WorldMap-Box > :first-child > p{
+        margin: 0;
+        margin: 3rem 0;
+        width: 100%;
+    }
+}
