@@ -49,7 +49,7 @@ const AboutUsPage = () => {
                     <div>
                         <h2>Nuestra misión</h2>
                         <h3>De transformar el establecimiento en un lugar significativamente mejor</h3>
-                        <h2>Facilitando innovadores y asombrosas soluciones creativas <strong>jamás antes vistas</strong> hacia el alumnado...</h2>
+                        <h2>Facilitando innovadoras y asombrosas soluciones creativas <strong>jamás antes vistas</strong> hacia el alumnado...</h2>
                     </div>
                 </article>
 
