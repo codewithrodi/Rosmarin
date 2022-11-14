@@ -30,9 +30,9 @@ const AboutUsPage = () => {
         [<BsPersonCheck />, 'Exclusividad', 'Otorgándole múltiples convenios y más de 30 propuestas a desarrollar.']
     ];
     const FeaturesData = [
-        [DocumentationConcept, 'Una extensa y completa documentación', <p>No más desconocimiento hacia los estudiantes, <a href=''>tienes un documento con más de 40 páginas</a> que abarca toda nuestra lista, desde nuestros proyectos, convenios, uso del dinero, integrantes, entre otras categorías...</p>, 'Ver documentación', References.Documentation],
-        [DiscountConcept, 'Exclusividad únicamente para ti', <p>Nos encargamos de realizar <a href=''>multiples convenios con diversos locales de ambiguo interes</a> para ofrecerte exclusividad al pertenecer al extraordinario alumnado del establecimiento Salesianos de Talca.</p>, 'Conocer convenios', '/agreements'],
-        [SocialMediaConcept, 'Redes Sociales en constante actualización', <p>¡No olvides <a href=''>seguirnos en nuestras redes sociales</a> para mantenerte al tanto de todas las noticias que rodean tanto al establecimiento como a nuestra lista, ¿Qué estás esperando para unirte a nuestro movimiento?!</p>, 'Nuestro Instagram', References.Instagram]
+        [DocumentationConcept, 'Una extensa y completa documentación', <p>No más desconocimiento hacia los estudiantes, <a href={References.Documentation}>tienes un documento con más de 40 páginas</a> que abarca toda nuestra lista, desde nuestros proyectos, convenios, uso del dinero, integrantes, entre otras categorías...</p>, 'Ver documentación', References.Documentation],
+        [DiscountConcept, 'Exclusividad únicamente para ti', <p>Nos encargamos de realizar <a onClick={() => Navigate("/agreements")}>multiples convenios con diversos locales de ambiguo interes</a> para ofrecerte exclusividad al pertenecer al extraordinario alumnado del establecimiento Salesianos de Talca.</p>, 'Conocer convenios', '/agreements'],
+        [SocialMediaConcept, 'Redes Sociales en constante actualización', <p>¡No olvides <a href={References.Instagram}>seguirnos en nuestras redes sociales</a> para mantenerte al tanto de todas las noticias que rodean tanto al establecimiento como a nuestra lista, ¿Qué estás esperando para unirte a nuestro movimiento?!</p>, 'Nuestro Instagram', References.Instagram]
     ];
 
     useEffect(() => {
