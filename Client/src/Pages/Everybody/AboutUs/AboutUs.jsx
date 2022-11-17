@@ -27,7 +27,7 @@ const AboutUsPage = () => {
     const PurposesData = [
         [<BsHeart />, 'Experiencias', 'Constribuimos a la construcción de experiencias significativas, dentro de un entorno altamente inclusivo, que dejen huellas en los estudiantes.'],
         [<TfiWorld />, 'Universal', 'Sin excluir a nadie, nuestros asombrosos proyectos están destinados hacia todos.'],
-        [<BsPersonCheck />, 'Exclusividad', 'Otorgándole múltiples convenios y más de 30 propuestas a desarrollar.']
+        [<BsPersonCheck />, 'Inclusión', 'Porque entendemos que nuestra comunidad integra muchos perfiles e intereses distintos, tenemos un set de múltiples convenios y más de 30 propuestas que promueven la participación de todos.']
     ];
     const FeaturesData = [
         [DocumentationConcept, 'Una extensa y completa documentación', <p>No más desconocimiento hacia los estudiantes, <a href={References.Documentation}>tienes un documento con más de 40 páginas</a> que abarca toda nuestra lista, desde nuestros proyectos, convenios, uso del dinero, integrantes, entre otras categorías...</p>, 'Ver documentación', References.Documentation],
