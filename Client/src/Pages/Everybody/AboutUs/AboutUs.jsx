@@ -25,7 +25,7 @@ const AboutUsPage = () => {
         ['Un liderazgo extraordinario', 'Los líderes que aspiran a ser parte del Centro General de Alumnos están guiando la Lista "A" a medida que evoluciona la toma de decisiones, ayudando a crear una comunidad significativamente mejor y unida.']
     ];
     const PurposesData = [
-        [<BsHeart />, 'Experiencias', 'Constribuimos a la construcción de experiencias significativas, dentro de un entorno altamente inclusivo, que dejen huellas en los estudiantes.'],
+        [<BsHeart />, 'Experiencias', 'Estamos altamente comprometidos en contribuir y/o mejorar la construcción de nuevas experiencias significativas, dentro de un entorno el cual sea inclusivo con la finalidad de que dejen huellas en cada uno de los estudiantes que alberga el establecimiento.'],
         [<TfiWorld />, 'Universal', 'Nuestra plataforma e ideas están destinados a beneficiar no solo a los alumnos de nuestro colegio, sino, a todos los centros de alumnos que quieran usar nuestras herramientas de código libre e ideas, para implementar en sus establecimientos, promoviendo nuestro espíritu salesiano de colaboración.'],
         [<BsPersonCheck />, 'Inclusión', 'Porque entendemos que nuestra comunidad integra muchos perfiles e intereses distintos, tenemos un set de múltiples convenios y más de 30 propuestas que promueven la participación de todos.']
     ];
