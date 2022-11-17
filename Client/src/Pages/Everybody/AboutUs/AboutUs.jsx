@@ -123,7 +123,7 @@ const AboutUsPage = () => {
             <section id='WorldMap-Box'>
                 <article>
                     <h3>¡Hola mundo desde <span className='Blue-Highlight'>Talca</span>!</h3>
-                    <p className='Gray-Text'>Gracias al desarrollo constante de nuestra plataforma digital y nuestra visibilidad actual dentro de los motores de búsqueda en Internet, ¡Nuestro alcance puede llegar mucho mas allá de nuestra ciudad, cultivando el conocimiento de las acciones que se realizan desde Salesianos Talca a nivel internacional!</p>
+                    <p className='Gray-Text'>Nuestras ideas en acción tienen una gran visibilidad y pueden ser una extraordinaria fuente de inspiración, no solo para otros alumnos de nuestro colegio, sino que también para otros líderes o jóvenes con visión de otras partes del mundo. Tomamos las buenas ideas que funcionan, les agregamos valor, las mejoramos y las dejamos libres para que otros las tomen, las usen y las mejoren también. Colaboramos, difundimos y creamos, en base a las fortalezas que nos proporciona la tecnología, desarrollamos software Open-Source, que pueden ser replicados en otros establecimientos, de otras culturas, incluso, con otras creencias… Buscamos promover la difusión de las ideas que surgen desde Salesianos Talca hacia el mundo, con el propósito de compartir, colaborar y mejorar esas ideas de manera sistemática y constante en el tiempo, de ninguna manera buscamos competir con los líderes anteriores, es construir mejorando las ideas e implementando nuevas de acuerdo a las necesidades de los tiempos, buscamos crear un legado que mejore y se nutra con el pasar de los años.</p>
                 </article>
                 
                 <Grommet>
