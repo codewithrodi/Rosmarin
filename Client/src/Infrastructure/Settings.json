@@ -1,5 +1,25 @@
 {
     "Server": "https://mail.cgacest.com:7300",
+    "Infrastructure": {
+        "SquareMeters": {
+            "Campus": {
+                "HC": 8650,
+                "TP": 11050
+            }
+        },
+        "Students": 2008,
+        "Teachers": 89,
+        "AdditionalRooms": [
+            "Gimmnasio",
+            "Sala de Música",
+            "Laboratorios de especialidades técnicas",
+            "Biblioteca",
+            "Casino",
+            "Laboratorios de computación",
+            "Capilla",
+            "Auditorios"
+        ]
+    },
     "RecommendationLetters": [
         {
             "Student": "Rodolfo Herrera",

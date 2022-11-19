@@ -66,7 +66,6 @@
 }
 
 #AboutUs-Main #KnowUs-Box{
-    margin: 1rem 0;
     padding: 1rem;
 }
 
@@ -98,7 +97,6 @@
 
 #AboutUs-Main #KnowUs-Box #Purposes-Box{
     margin: 7rem auto 0;
-    max-width: 1000px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -107,7 +105,7 @@
 }
 
 #AboutUs-Main #KnowUs-Box #Purposes-Box > div{
-    width: 310px;
+    width: 380px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
