@@ -48,9 +48,4 @@
     #Agreements-Main .Agreement-Container:not(:last-child){
         margin-bottom: 1.5rem;
     }
-
-    #Agreements-Main .Agreement-Container{
-        width: 300px;
-        max-width: 300px;
-    }
 }
