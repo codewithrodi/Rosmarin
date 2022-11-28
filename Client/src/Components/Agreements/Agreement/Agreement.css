@@ -69,9 +69,13 @@
 .Agreement-Container > .MuiSkeleton-root{
     border-radius: .2rem;
 }
+}
 
-@media screen and (max-width: 1000px){
-    .Agreement-Container img{
+@media screen and (max-width: 540px){
+   .Agreement-Container, .Agreement-Container img{
         width: 100%;
-    }
+        min-width: 100%;
+        min-height: 100%;
+        height: 100%;
+   }
 }
