@@ -49,3 +49,9 @@
         margin-bottom: 1.5rem;
     }
 }
+
+@media screen and (max-width: 540px){
+    #Agreements-Main #Agreements-Box{
+        justify-content: center;
+    }
+}
