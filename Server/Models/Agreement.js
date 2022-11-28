@@ -18,7 +18,6 @@
 const Mongoose = require('mongoose');
 const Slugify = require('slugify');
 const SocialValidator = require('is-social');
-const Security = require('../Utilities/Security');
 const FileSystem = require('fs');
 const { DeleteFile } = require('../Utilities/Runtime');
 const Validations = global.Validations.Agreement;
@@ -80,14 +79,12 @@ const AgreementSchema = new Mongoose.Schema({
 
 AgreementSchema.pre('findOneAndDelete', async function(Next){
     const Agreement = this.getQuery()._id;
-    Security.AcceptedImagesMimeTypes.forEach((Type) =>
-        DeleteFile(`${process.env.IMAGES_FOLDER_PATH}PID-${Agreement}-AC.${Type}`));
+    DeleteFile(`${process.env.IMAGES_FOLDER_PATH}PID-${Agreement}-AC.jpeg`);
     Next();
 });
 
 AgreementSchema.methods.ParsePhotoPath = function(OriginalFilename, ID, Bridge){
-    const Splitted = OriginalFilename.split('.');
-    Bridge.Photo = `PID-${ID}-AC.${Splitted[Splitted.length - 1]}`;
+    Bridge.Photo = `PID-${ID}-AC.jpeg`;
     DeleteFile(process.env.IMAGES_FOLDER_PATH + Bridge.Photo);
     FileSystem.renameSync(process.env.IMAGES_FOLDER_PATH + OriginalFilename, process.env.IMAGES_FOLDER_PATH + Bridge.Photo);
 }
@@ -103,7 +100,9 @@ AgreementSchema.pre('findOneAndUpdate', async function(Next){
 
 AgreementSchema.pre('save', function(Next){
     this.Slug = Slugify(this.Title);
-    this.ParsePhotoPath(`${this.Photo}`, this._id, this);
+    setTimeout(() => {
+        this.ParsePhotoPath(`${this.Photo}`, this._id, this);
+    }, 500);
     Next();
 });
 

@@ -23,8 +23,10 @@
 
 .Agreement-Container img{
     width: 250px;
+    height: 250px;
+    min-height: 250px;
+    min-width: 250px;
     border-radius: .5rem;
-    height: auto;
 }
 
 .Agreement-Container > figcaption{

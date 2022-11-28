@@ -16,6 +16,7 @@
  ****/
 
 const NodeMailer = require('nodemailer');
+const FileSystem = require('fs');
 
 exports.DeleteFile = (Path) => {
     try{

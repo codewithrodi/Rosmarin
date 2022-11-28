@@ -18,18 +18,18 @@
 const Express = require('express');
 const Router = Express.Router();
 const AgreementController = require('../Controllers/Agreement');
-const UploadMiddleware = require('../Middlewares/Upload');
+const AgreementMiddleware = require('../Middlewares/Agreement');
 const AuthMiddleware = require('../Middlewares/Authentication');
 
 Router.get('/', AgreementController.GetAgreements);
 
 Router.use(AuthMiddleware.Protect, AuthMiddleware.RestrictTo('admin'));
 
-Router.post('/', UploadMiddleware.Upload.single('Photo'), AgreementController.CreateAgreement);
+Router.post('/', AgreementMiddleware.UploadAgreementPhoto.single('Photo'), AgreementController.CreateAgreement);
 
 Router.route('/:Identifier/')
     .delete(AgreementController.DeleteAgreement)
-    .patch(UploadMiddleware.Upload.single('Photo'), AgreementController.UpdateAgreement);
+    .patch( AgreementMiddleware.UploadAgreementPhoto.single('Photo'), AgreementController.UpdateAgreement);
 
 Router.route('/:Slug/')
     .get(AgreementController.GetAgreement);

@@ -53,7 +53,7 @@ Application.use(Cors({ origin: process.env.CORS_ORIGIN }));
 Application.use(Compression());
 Application.use(HPP());
 Application.use(XSS());
-Application.use(Helmet());
+// Application.use(Helmet());
 Application.use(MongoSanitize());
 Application.use(Express.json({ limit: process.env.BODY_MAX_SIZE || '10kb' }));
 Application.use('/', Express.static(process.env.PUBLIC_FOLDER));

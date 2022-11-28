@@ -28,13 +28,16 @@ import { AuthenticationContext } from '../../../Services/Authentication/Context'
 import { AgreementContext } from '../../../Services/Agreement/Context';
 import { BsTrash } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Skeleton from './Skeleton';
 import './Agreement.css';
 
-const Agreement = ({ Data }) => {
+const Agreement = ({ Data, SetAgreements, GetAgreements }) => {
     const { GetUser } = useContext(AuthenticationContext);
-    const { SetAgreementServiceBuffer } = useContext(AgreementContext);
+    const { SetAgreementServiceBuffer, DeleteAgreement } = useContext(AgreementContext);
     const [GetIsImageLoading, SetIsImageLoading] = useState(true);
+    const [GetIsLoading, SetIsLoading] = useState(false);
+    const [GetIsComponentMounted, SetIsComponentMounted] = useState(true);
     const Navigate = useNavigate();
     const TitleReference = useRef(null);
     const OptionsReference = useRef(null);
@@ -44,15 +47,28 @@ const Agreement = ({ Data }) => {
             OptionsReference.current.style.height = TitleReference.current.clientHeight + 'px';
         return () => {
             SetIsImageLoading(true);
+            SetIsLoading(false);
+            SetIsComponentMounted(false);
         };
     }, []);
 
-    return (
+    const HandleAgreementDelete = () => {
+        SetIsLoading(true);
+        DeleteAgreement(Data._id)
+            .then(() => (GetIsComponentMounted) && 
+                (SetAgreements( GetAgreements.filter(({ _id }) => Data._id !== _id) )))
+            .finally(() => (GetIsComponentMounted) && (SetIsLoading(false)));
+    };
+
+    return (GetIsLoading) ? (
+        <p>Loading...</p>
+    ) : (
         <figure className='Agreement-Container'>
             {(GetIsImageLoading) && (
                 <Skeleton IsImageLoading={true} />
             )}
-            <img 
+            <LazyLoadImage
+                effect='blur'
                 onLoad={() => SetIsImageLoading(false)}
                 hidden={GetIsImageLoading}
                 src={FormattedImageURL(Data.Photo)} 
@@ -101,6 +117,7 @@ const Agreement = ({ Data }) => {
                                         <EverMenu.Divider />
                                         <EverMenu.Group>
                                             <EverMenu.Item
+                                                onClick={HandleAgreementDelete}
                                                 icon={<BsTrash />}
                                             >
                                                 <span>Eliminar</span>

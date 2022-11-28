@@ -35,15 +35,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     height: auto;
-}
-
-@media screen and (max-width: 1000px){
-    #Agreements-Box{
-        justify-content: center;
-    }
 }
 
 @media screen and (max-width: 768px){

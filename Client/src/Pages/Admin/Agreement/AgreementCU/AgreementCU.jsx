@@ -171,7 +171,7 @@ const CreateAgreementPage = () => {
         Data.append('WhatsappPhoneNumber', GetWhatsappPhoneNumber);
         SetIsLoading(true);
         SetAgreementServiceBuffer({});
-        ((Slug) ? (UpdateAgreement) : (CreateAgreement))(...(Slug) ? ([Data, GetIdentifier]) : (Data))
+        ((Slug) ? (UpdateAgreement) : (CreateAgreement))(...((Slug) ? ([Data, GetIdentifier]) : ([Data])))
             .then(() => (GetIsComponentMounted) && (Navigate('/agreements')))
             .finally(() => (GetIsComponentMounted) && (SetIsLoading(false)));
     };
@@ -416,7 +416,7 @@ const CreateAgreementPage = () => {
                                 />
                             </article>
 
-                            {GetError && (
+                            {(GetError) && (
                                 <article className='Error-Container'>
                                     <p>{GetError}</p>
                                 </article>

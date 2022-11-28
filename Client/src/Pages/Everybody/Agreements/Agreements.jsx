@@ -20,6 +20,7 @@ import ColorsBox from '../../../Components/General/ColorsBox';
 import Bags from '../../../Assets/Images/Agreements/Bags.png'
 import Agreement from '../../../Components/Agreements/Agreement';
 import Skeleton from '../../../Components/Agreements/Agreement/Skeleton';
+import UseWindowSize from '../../../Hooks/WindowSize';
 import { AgreementContext } from '../../../Services/Agreement/Context';
 import { BiMessageSquare } from 'react-icons/bi';
 import { AiOutlineTeam } from 'react-icons/ai';
@@ -30,9 +31,8 @@ import { scroller } from 'react-scroll';
 import { Popover, Menu as EverMenu, Position } from 'evergreen-ui';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { IoIosArrowDown } from 'react-icons/io';
-import UseWindowSize from '../../../Hooks/WindowSize';
-import './Agreements.css';
 import { GenerateArray } from '../../../Utilities/Algorithms';
+import './Agreements.css';
 
 const AgreementsPage = () => {
     const [Width] = UseWindowSize();
@@ -145,6 +145,8 @@ const AgreementsPage = () => {
                 ) : (
                     (GetAgreements.map((Data, Index) => (
                         <Agreement
+                            GetAgreements={GetAgreements}
+                            SetAgreements={SetAgreements}
                             key={Index}
                             Data={Data}
                         />
