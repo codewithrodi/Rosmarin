@@ -130,7 +130,7 @@ const AgreementsPage = () => {
 
             <ColorsBox
                 InfoBox={{
-                    Title: '¿Qué damos a entender por convenio?',
+                    Title: '¿Entendimiento por convenio?',
                     Description: 'Cuando nos referimos a un convenio, hablamos de beneficios en lugares cuya naturaleza puede variar, en cuanto a los beneficios debemos darle relevancia a los descuentos monetarios, para que los estudiantes tengan más posibilidades a la hora de adquirir un artículo y/o servicio.'
                 }}
                 ComplementBox={{
