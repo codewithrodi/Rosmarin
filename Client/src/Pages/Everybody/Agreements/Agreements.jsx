@@ -72,7 +72,7 @@ const AgreementsPage = () => {
             <section id='Welcome-Box'>
                 <article id='Content-Box'>
                     <div>
-                        <h3>¡Porque nuestra lista te ofrece exclusividad!</h3>
+                        <h3>¡Fomentamos la exclusividad en el alumno Salesiano!</h3>
                         <p>¡Conoce todos nuestros convenios que tenemos disponibles con diferentes tiendas dentro de la ciudad, interactúa con sus redes sociales de forma rápida y sencilla gracias a nuestra plataforma!</p>
                         <div id='Quick-Navegation-Box'>
                             {(Width > 768) ? (
@@ -135,7 +135,7 @@ const AgreementsPage = () => {
                 }}
                 ComplementBox={{
                     Title: '¿Por qué lo hacemos?',
-                    Description: 'Nuestro propósito como aspirantes al Centro General de Alumnos es ofrecer una grata experiencia al alumnado, hayan votado o no por nosotros, buscamos el bien común, y la idea de hacer acuerdos con terceros abre una nueva puerta a la posibilidad de que el centro de estudiantes pueda brindar beneficios por sí solo a los estudiantes, ofreciendo así diversos tipos de beneficios en locales dentro de la ciudad.'
+                    Description: 'Como Centro General de Alumnos buscamos ofrecer una grata experiencia a los estudiantes, hayan votado o no por nosotros, buscamos el bien común, y la idea de hacer acuerdos con terceros abre una nueva puerta a la posibilidad de que el Centro de Alumnos pueda brindar beneficios por sí solo a los estudiantes, ofreciendo así diversos tipos de beneficios en locales dentro de la ciudad.'
                 }}
             />
 

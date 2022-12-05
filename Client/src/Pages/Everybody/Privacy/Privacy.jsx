@@ -31,11 +31,11 @@ const PrivacyPage = () => {
             <ColorsBox
                 InfoBox={{
                     Title: '¡Porque el conocimiento es un verdadero poder!',
-                    Description: 'Infórmate de nuestras condiciones de uso y política de privacidad, conoce quiénes somos realmente y qué hacemos con tus datos.'
+                    Description: 'Conoce al pie de la letra cada uno de los términos y condiciones que aceptas al momento de que navegas a través de nuestra plataforma Y resuelve incógnitas como él ¿Qué hacemos con tus datos?, ¿Quiénes están detrás de esta plataforma?, entre otras...'
                 }}
                 ComplementBox={{
                     Title: '¿Sabes realmente de qué se trata esto?',
-                    Description: 'La política de privacidad, es un documento o ciertas declaraciones hechas por un sitio web, donde se plasman las prácticas y procesos adoptados dentro de una página para darle al usuario toda la transparencia en relación con los datos que usa.'
+                    Description: 'La política de privacidad, es un documento o ciertas declaraciones hechas por un sitio web, donde se plasman las prácticas y procesos adoptados dentro de una página para darle al usuario toda la transparencia en relación con los datos que usa la misma para llevar a cabo diversas acciones.'
                 }}
             />
 
@@ -49,7 +49,7 @@ const PrivacyPage = () => {
                 <article id='Terms-Box'>
                     <div>
                         <h3>¿Quiénes somos exactamente?</h3>
-                        <p>Los responsables detrás del dominio (www.cgacest.com) junto con esta plataforma y/o derivados, es un grupo de 23 integrantes, aspirantes al centro general de estudiantes del año 2023, actualmente, mantenemos esta plataforma, con el fin para mejorarla en todos sus ámbitos, destacando la experiencia que podemos ofrecer al usuario, con el objetivo de poder adaptarlas a todas nuestras propuestas que tenemos como lista, nos comprometemos a mantener esta plataforma y generar más soluciones para nuestros estudiantes siempre y cuando salgamos como lista ganadora, somos altamente transparentes, para dar visibilidad de cómo haremos cada uno de nuestros proyectos, los cuales beneficiarán única y exclusivamente a los estudiantes de la presencia salesiana en Talca. Dando así, una estancia por parte del centro de estudiantes nunca antes vista, estamos aquí totalmente decididos, con ganas de reinventar la rueda, de cambiar lo establecido, y de contribuir positivamente en todo lo que esté a nuestro alcance.</p>
+                        <p>Los responsables detrás del dominio (www.cgacest.com) junto con esta plataforma y/o derivados, es un grupo de 23 integrantes, que hacen parte del Centro General de Alumnos de ambas casas que posee la presencia Salesiana en Talca, actualmente, mantenemos esta plataforma, con la finalidad de complementar la estadia del alumnado y los diversos proyectos que llevamos a cabo, destacando la experiencia que podemos ofrecer a nuestros visitantes y unidos con el objetivo de poder adaptarlas a cada una de nuestras propuestas de manera que podamos generar más soluciones para los estudiantes, somos altamente transparentes bajo el lema de nuestra institución, buscando unicamente el beneficio del alumnado que alberga la presencia Salesiana en Talca. Dando así, una estancia por parte del Centro de Alumnos nunca antes vista, estamos aquí totalmente decididos, con ganas de reinventar la rueda, de cambiar lo establecido, y de contribuir positivamente en todo lo que esté a nuestro alcance.</p>
                     </div>
 
                     <div>

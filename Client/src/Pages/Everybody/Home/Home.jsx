@@ -57,7 +57,7 @@ const HomePage = () => {
     const [GetRecommendationLetter, SetRecommendationLetter] = useState(null);
     const [SearchParameters] = useSearchParams();
     const Features = [
-        [<RiTeamLine />, '+20 Integrantes, amplia visión de acontecimientos'],
+        [<RiTeamLine />, '20+ Integrantes, amplia visión de acontecimientos'],
         [<BiChurch />, 'Representación por igual en ambas sedes, (HC) y (TP)'],
         [<IoIosGitNetwork />, 'Alrededor de dos docenas de proyectos'],
         [<BsCloudFog2 />, 'Un nuevo proceso de digitalización'],
@@ -173,8 +173,8 @@ const HomePage = () => {
                 <section id='Welcome-Box'>
                     <article id='Content-Box'>
                         <div>
-                            <h3>¡Somos la Lista "A", acompañanos e innovemos juntos!</h3>
-                            <p>Una lista conformada por más de 20 integrantes con decenas de propuestas y múltiples convenios. Porque votar informado es importante, ¡Conocenos y vota a consciencia, tu futuro está en tus manos!</p>
+                            <h3>¡Centro General de Alumnos, Presencia Salesiana en Talca!</h3>
+                            <p>Unidos por el movimiento Salesiano que ha germinado en la historia de la humanidad una huella bajo el lema "Buenos cristianos y honestos ciudadanos", desarrollando de más de 25 proyectos junto al personal de nuestra comisión y al portavoz directivo repartido en ambas casas Salesianas de Talca.</p>
                             <div id='Quick-Navegation-Box'>
                                 {(Width > 1000) && (
                                     <Button
@@ -259,17 +259,17 @@ const HomePage = () => {
                 <ColorsBox
                     InfoBox={{
                         Title: 'Una nueva misión asignada, innovar con amor y respeto al arte',
-                        Description: 'Nuestra lista está compuesta por personas maravillosas, individuos capaces de transformar lo ordinario en cosas extraordinarias nunca antes presentadas. Nuestra misión es mejorar significativamente la estancia de los estudiantes y asistentes de la educación.'
+                        Description: 'Un Centro de Alumnos compuesto por personas extraordinarias, dispuestos a realizar el cambio de transformar lo ordinario en cosas extraordinarias con la misión de mejorar significativamente la estancia de los estudiantes y asistentes de la educación dentro de la casa Salesiana.'
                     }}
                     ComplementBox={{
-                        Title: '¡Porque de tu voto depende tu futuro, en estas elecciones vota informado!',
-                        Description: 'La presencia salesiana en Talca alberga a unos 2.000 alumnos. ¡Tu voto es muy importante! Porque estarás votando por un grupo de estudiantes que representarán a tu establecimiento, en estas elecciones te invitamos a votar con conciencia, tu futuro con el del resto de los estudiantes está en juego.'
+                        Title: '¡Motivados e inspirados por la memoria y cultura Salesiana en el transcurso del tiempo!',
+                        Description: 'Ambas casas Salesianas albergan más de 2.000 estudiantes, en los que buscamos crear una huella inolvidable, germinando en sus memorias benéficas experiencias que le aportaran valor a su vida que en algún momento recordara con abundante amor y nostalgia durante su adultez.'
                     }}
                 />
 
                 <Element name='Campaign-Box' id='Campaign-Box'>
                     <article id='Left-Box'>
-                        <h3>¿Por qué votar por nosotros?</h3>
+                        <h3>¿Cuáles son nuestras competencias?</h3>
                         <div id='Features-Box'>
                             {Features.map(([ Icon, Text ], Index) => (
                                 <div key={Index}>
@@ -285,7 +285,7 @@ const HomePage = () => {
                     <article id='Right-Box'>
                         <div>
                             <h3>Cartas de recomendación</h3>
-                            <p>Las cartas de recomendación son documentos elaborados por docentes donde describen y recomiendan a un estudiante, en este caso, para pertenecer al Centro General de Estudiantes; A continuación, tienes a tu disposición las diferentes cartas que tienen nuestros integrantes, las cuales solo dejan evidenciar a las maravillosas personas que componen nuestra lista.</p>
+                            <p>Hablamos de documentos elaborados por docentes donde describen y recomiendan a un estudiante, en este caso, para pertenecer al Centro General de Estudiantes. A continuación, tienes a tu disposición las diferentes cartas que posee nuestro equipo. ¡Buscamos ser transparentes, siguiendo el lema de nuestra institución... "Buenos cristianos y honestos ciudadanos"!</p>
                         </div>
                         <div id='Recommendations-Letters-Box'>
                             {Settings.RecommendationLetters.map((Data, Index) => (
