@@ -23,3 +23,15 @@ if(typeof Node === 'function' && Node.prototype){
         return OriginalRemoveChild.apply(this, arguments);
     }
 }
+
+// TODO: This is a patch for the 'react-pdf' library, within 
+// TODo: the next platform updates this library will have to 
+// TODO: be changed to render PDF documents due to compatibility 
+// TODO: problems, without this patch it is likely that the 
+// TODO: page will NOT load on some devices.
+Object.defineProperty(Array.prototype, 'at', {
+    value: function(Iterator){
+        return this[Iterator];
+    },
+    enumerable: false
+});
