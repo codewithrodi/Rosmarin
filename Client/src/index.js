@@ -15,6 +15,7 @@
  * =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  ****/
 
+import './Utilities/Patches';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Application from './Application';
@@ -32,7 +33,6 @@ import { AuthenticationProvider } from './Services/Authentication/Context';
 import { MetricProvider } from './Services/Metric/Context';
 import { AgreementProvider } from './Services/Agreement/Context';
 import { Provider as AlertProvider } from 'react-alert'
-import './Utilities/Patches';
 import './Assets/StyleSheets/General.css';
 import './Assets/StyleSheets/Form.css';
 import './Assets/StyleSheets/Generic-WBox.css';
